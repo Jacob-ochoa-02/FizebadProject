@@ -1,0 +1,46 @@
+.Header-of {
+    display: flex;
+    padding: 0px;
+    justify-content: space-between;
+    position: relative;
+    transition: 0.4s;
+    height: 90px;
+}
+
+.headerLogo {
+    margin-top: 0px;
+    margin-left: 90px;
+    width: 180px;
+    align-self: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+    height: 100%;
+}
+
+nav > ul {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 100%;
+}
+
+.headerBarContainer {
+    transition: 0.7s;
+}
+
+.headerBarContainer.solid {
+    transition: 0.7s;
+    animation-duration: 1s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    background-color: #212121;
+}
+
