@@ -1,0 +1,12 @@
+.News {
+    background-color: white;
+    margin-top: 300px;
+    padding: 30px 50px;
+}
+
+.NewsContainer {
+    padding: 20px;
+    height: 840px;
+    border-radius: 30px;
+    background-color: #E0DAD1;
+}
