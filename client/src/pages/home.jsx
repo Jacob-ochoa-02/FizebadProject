@@ -1,8 +1,8 @@
-import HeaderBar from "../components/headerBar/headerBar"
-import DescriptionBar from "../components/descriptionBar/descriptionBar"
-import NewsBar from "../components/newsBar/newsBar"
-import FooterBar from "../components/footerBar/footerBar"
-import ServicesBar from "../components/servicesBar/servicesBar"
+import HeaderBar from "../components/homePageComponent/headerBar/headerBar"
+import DescriptionBar from "../components/homePageComponent/descriptionBar/descriptionBar"
+import NewsBar from "../components/homePageComponent/newsBar/newsBar"
+import FooterBar from "../components/homePageComponent/footerBar/footerBar"
+import ServicesBar from "../components/homePageComponent/servicesBar/servicesBar"
 
 export default function Home() {
     return (

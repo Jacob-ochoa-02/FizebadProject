@@ -34,15 +34,15 @@
 }
 
 #facebook {
-    background-image: url('../../assets/images/facebook.png');
+    background-image: url('../../../assets/images/facebook.png');
 }
 
 #youtube {
-    background-image: url('../../assets/images/youtube.png');
+    background-image: url('../../../assets/images/youtube.png');
 }
 
 #instagram {
-    background-image: url('../../assets/images/instagram.png');
+    background-image: url('../../../assets/images/instagram.png');
 }
 
 #facebook,
@@ -70,13 +70,13 @@
 }
 
 #facebook:hover {
-    background-image: url('../../assets/images/facebookColor.png');
+    background-image: url('../../../assets/images/facebookColor.png');
 }
 #youtube:hover {
-    background-image: url('../../assets/images/youtubeColor.png');
+    background-image: url('../../../assets/images/youtubeColor.png');
 }
 #instagram:hover {
-    background-image: url('../../assets/images/instagramColor.png');
+    background-image: url('../../../assets/images/instagramColor.png');
 }
 
 .madeBy {
