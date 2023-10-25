@@ -7,7 +7,6 @@ import ServicesBar from "../components/servicesBar/servicesBar"
 export default function Home() {
     return (
         <div>
-            
             <HeaderBar/>
             <DescriptionBar/>
             <NewsBar/>
