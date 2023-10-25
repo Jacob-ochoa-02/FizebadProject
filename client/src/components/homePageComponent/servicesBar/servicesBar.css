@@ -59,14 +59,14 @@ button:hover {
 }
 
 .fieldBox {
-    background-image: url('../../assets/images/fieldsImage.jpg');
+    background-image: url('../../../assets/images/fieldsImage.jpg');
     margin-left: 150px;
 }
 .classesBox {
-    background-image: url('../../assets/images/classesImage.jpg');
+    background-image: url('../../../assets/images/classesImage.jpg');
 }
 .implementsBox {
-    background-image: url('../../assets/images/implementsImage.jpeg');
+    background-image: url('../../../assets/images/implementsImage.jpeg');
     margin-right: 150px;
 }
 

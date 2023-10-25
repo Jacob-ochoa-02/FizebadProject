@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from "../../assets/images/logo.png"
+import logo from "../../../assets/images/logo.png"
 import './headerBar.css'
 
 export default function HeaderBar() {
