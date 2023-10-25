@@ -1,5 +1,4 @@
-import "./register.css"
-import FooterBar from "../components/footerBar/footerBar"
+import FooterBar from "../components/homePageComponent/footerBar/footerBar"
 
 export default function register() {
     return (
