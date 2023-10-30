@@ -1,9 +1,14 @@
-import FooterBar from "../components/footerBar/footerBar"
+import FooterBar from "../components/homePageComponent/footerBar/footerBar"
+import HeaderLogin from "../components/LoginComponent/headerLogin/headerLogin"
+import LoginBar from "../components/LoginComponent/loginBar/loginBar"
+
 
 export default function Login() {
     return (
         <div>
-            <FooterBar/>
+            <HeaderLogin />
+            <LoginBar />
+            <FooterBar />
         </div>
     )
 }
