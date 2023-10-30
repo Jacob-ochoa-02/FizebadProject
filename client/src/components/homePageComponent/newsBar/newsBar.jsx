@@ -1,6 +1,6 @@
 import './newsBar.css'
 
-export default function newsBar() {
+export default function NewsBar() {
     return (
         <div>
             <div className="News">

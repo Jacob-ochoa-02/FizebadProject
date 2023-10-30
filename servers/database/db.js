@@ -1,6 +1,6 @@
-let mysql = require('mysql');
+const mysql = require('mysql');
 
-let conection = mysql.createConnection({
+const db = mysql.createConnection({
     host: '127.0.0.1',
     port: 3306,
     database: 'fizebaddatabase',
@@ -9,7 +9,7 @@ let conection = mysql.createConnection({
     insecureAuth: true
 });
 
-conection.connect(function(error){
+db.connect(function(error){
     if(error) {
         throw error;
     }else {
@@ -17,4 +17,10 @@ conection.connect(function(error){
     }
 });
 
-conection.end()
+//getting users
+
+export const getUsers = db.query((err, data) => {
+    return err ? console.log(err): console.log('success');
+});
+
+db.end();
