@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from "../../../assets/images/logo.png"
+import { Link } from "react-router-dom";
 import './headerBar.css'
 
 export default function HeaderBar() {
@@ -21,6 +22,13 @@ export default function HeaderBar() {
       window.removeEventListener('scroll', setFixed);
     };
   });
+  
+  const scrollingTo = (id) =>{
+    const elements = document.getElementById(id);
+    if(elements) {
+      elements.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   return (
     <div className={fix ? 'headerBarContainer solid':'headerBarContainer'}>
@@ -28,13 +36,19 @@ export default function HeaderBar() {
         <img className="headerLogo" src={logo} alt="Company Logo" />
         <nav>
           <ul>
-            <li><a href=".">INICIO</a></li>
-            <li><a href=".">SERVICIOS</a></li>
-            <li><a href=".">UBICACIÓN</a></li>
-            <li><a href=".">RESERVA</a></li>
+            <li><p onClick={()=> {
+              scrollingTo('index')
+            }}>INICIO</p></li>
+            <li><p onClick={()=> {
+              scrollingTo('services')
+            }}>SERVICIOS</p></li>
+            <li><p onClick={()=> {
+              scrollingTo('location')
+            }}>UBICACIÓN</p></li>
+            <li><Link to="/signUp">RESERVA</Link></li>
           </ul>
           <span className="logIn_btn">
-            <a href=".">INICIAR SESIÓN</a>
+            <Link to='/signUp'>INICIAR SESIÓN</Link>
           </span>
         </nav>
       </header>

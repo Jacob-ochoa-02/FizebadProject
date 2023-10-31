@@ -1,6 +1,7 @@
 import './servicesBar.css'
+import { Link } from 'react-router-dom';
 
-export default function servicesBar() {
+export default function ServicesBar() {
     return (
         <div className="servicesBarContainer">
             <h1>NUESTROS SERVICIOS</h1>
@@ -15,7 +16,7 @@ export default function servicesBar() {
                     <button type="button">Implementos</button>
                 </section>
             </div>
-            <button className='reserveNow' type='button'>¡Reserva Ahora!</button>
+            <Link className='reserveNow' to='/signUp'>¡Reserva Ahora!</Link>
         </div>
     )
 }
