@@ -1,4 +1,4 @@
-import FooterBar from "../components/homePageComponent/footerBar/footerBar"
+import FooterBar from "../components/footerBar"
 import HeaderLogin from "../components/LoginComponent/headerLogin/headerLogin"
 import LoginBar from "../components/LoginComponent/loginBar/loginBar"
 
