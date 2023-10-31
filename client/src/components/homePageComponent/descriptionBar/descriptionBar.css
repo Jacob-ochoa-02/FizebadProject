@@ -1,8 +1,3 @@
-body {
-    background-image: url('../../../assets/images/indeximage.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 920px;
-}
 .description {
     display: flex;
     flex-direction: column;

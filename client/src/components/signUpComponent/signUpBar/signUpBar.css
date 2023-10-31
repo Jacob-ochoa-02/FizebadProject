@@ -1,0 +1,93 @@
+.signUpContent {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.83);
+    border-radius: 30px;
+    padding-left: 90px;
+    padding-right: 90px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.forms {
+    display: grid;
+    grid-template-columns: repeat(4, 0fr);
+    justify-items: center;
+}
+
+h1 {
+    margin-bottom: 70px;
+    font-size: 45px;
+    font-weight: bolder;
+    color: #273C2C;
+    text-align: center;
+    width: 100%;
+}
+
+label {
+    display: flex;
+    justify-self: start;
+    width: 170px;
+}
+
+label, 
+input, 
+select {
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+input{
+    width: 300px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+select {
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-self: start;
+}
+
+.buttonSignUp {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 25px;
+    background-color: #AF4626;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+}
+
+.buttonSignUp:hover {
+    cursor: pointer;
+    background-color: #b1573b;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+}
+
+#tenisLvl {
+    display: flex;
+    justify-self: start;
+    width: 20px;
+}

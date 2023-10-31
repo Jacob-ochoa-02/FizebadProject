@@ -1,7 +1,7 @@
-import logo from '../../../assets/images/logo.png'
-import "./footerBar.css"
+import logo from '../../assets/images/logo.png';
+import "./footerBar.css";
 
-export default function footerBar() {
+export default function FooterBar() {
     return (
         <div>
             <footer className="footerOfApp">
