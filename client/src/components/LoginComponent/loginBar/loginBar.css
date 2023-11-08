@@ -1,7 +1,7 @@
-body {
+.logInBody {
     background-image: url('../../../assets/images/loginImage.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 920px;
+    background-size: 100%;
     font-size: 18px;
     font-weight: bold;
 }
@@ -19,7 +19,8 @@ body {
     margin: 0 auto;
 }
 
-form {
+.formulario {
+    margin-top: 20px;
     margin-left: 80px;
     margin-right: 80px;
     padding: 30px;
@@ -31,6 +32,7 @@ form {
 
 .formContainer {
     background-color: rgba(255, 255, 255, 0.83);
+    margin-top: 20px;
     border-radius: 30px;
     height: 500px;
     width: 500px;
@@ -38,8 +40,7 @@ form {
 }
 
 h2 {
-    margin-top: 70px;
-    margin-bottom: 50px;
+    margin-top: 30px;
     font-size: 35px;
     font-weight: bolder;
     color: #273C2C;
@@ -48,11 +49,13 @@ h2 {
 }
 
 label {
-    display: flex;
     align-self: flex-start;
-    margin-top: 10px;
     font-weight: bold;
 }
+
+.usuarioText {}
+
+.contrasenaText {}
 
 input[type="text"],
 input[type="password"] {
@@ -61,15 +64,16 @@ input[type="password"] {
     margin: 5px -10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-bottom: 20;
 }
 
 input[type="submit"] {
     margin-top: 30px;
     background-color: #AF4626;
+    height: 40px;
     width: 130px;
     border: none;
     color: #fff;
-    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
@@ -90,4 +94,15 @@ input[type="submit"]:hover {
     color: #5bc0de;
     font-size: 14px;
     margin-top: 10px;
+}
+
+.forgetPassword {
+    align-self: flex-start;
+    font-size: small;
+    color: black;
+}
+
+.noAcount {
+    text-align: center;
+    color: black;
 }

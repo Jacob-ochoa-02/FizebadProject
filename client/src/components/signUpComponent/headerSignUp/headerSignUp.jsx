@@ -1,9 +1,10 @@
 import './headerSignUp.css';
 import logo from "../../../assets/images/logo.png";
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function HeaderLogin() {
-    const [fix, setFix] = useState(false);
+  const [fix, setFix] = useState(false);
 
   function setFixed() {
     if (window.scrollY > 10) {
@@ -22,15 +23,15 @@ export default function HeaderLogin() {
     };
   });
 
-    return (
-        <div className={fix ? 'headerBarContainer solid':'headerBarContainer'}>
-            <header className='Header-of'>
-                <img className="headerLogo" src={logo} alt="Company Logo" />
-                <a href="/" >
-                    <div className="return-button"></div>
-                </a>
-            </header>
-        </div>
-    );
+  return (
+    <div className={fix ? 'headerBarContainer solid' : 'headerBarContainer'}>
+      <header className='Header-of'>
+        <img className="headerLogo" src={logo} alt="Company Logo" />
+        <a href="/">
+          <div className='return-button'></div>
+        </a>
+      </header>
+    </div>
+  );
 
 }

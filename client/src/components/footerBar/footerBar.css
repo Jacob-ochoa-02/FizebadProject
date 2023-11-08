@@ -1,4 +1,3 @@
-
 .footerOfApp {
     background-color: #273C2C;
     height: 210px;
@@ -7,16 +6,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 5%;
 }
 
-.footerOfApp > .otherLinks {
+.footerOfApp>.otherLinks {
     position: absolute;
     display: flex;
     align-self: center;
     flex-direction: column;
 }
 
-.OtherLinks > img {
+.OtherLinks>img {
     height: 200px;
     width: 100%;
 }
@@ -28,7 +28,7 @@
     justify-content: center;
 }
 
-.socialNetworks > img {
+.socialNetworks>img {
     margin-left: 10px;
     height: 37px;
 }
@@ -72,9 +72,11 @@
 #facebook:hover {
     background-image: url('../../assets/images/facebookColor.png');
 }
+
 #youtube:hover {
     background-image: url('../../assets/images/youtubeColor.png');
 }
+
 #instagram:hover {
     background-image: url('../../assets/images/instagramColor.png');
 }
