@@ -23,10 +23,11 @@ app.get('/', (req, res)=> {
     return res.json('From backend side');
 });
 
-app.get('/users', (req, res)=>{
-    const sql = 'SELECT * FROM users';
-    db.query(sql, (err, data) => {
-        return err ? res.json(err): res.json(data);
+app.post('/user', (req, res)=>{
+    const email = req.body.email;
+    const pass = req.body.password;
+    db.query("SELECT * from users where Email = ? AND Password = ?",[email,pass], (err, data) => {
+        return err ? res.json(err): res.json('Success');
     })
 })
 

@@ -1,4 +1,4 @@
-body {
+#logInBody {
     background-image: url('../../../assets/images/loginImage.jpg');
     background-repeat: no-repeat;
     background-size: 100% 920px;
@@ -12,16 +12,23 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 500px;
-    width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
 
-form {
-    margin-left: 80px;
-    margin-right: 80px;
+.formContainer {
+    background-color: rgba(255, 255, 255, 0.83);
+    border-radius: 30px;
+    width: 500px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.formulario {
+    margin-left: 70px;
+    margin-right: 70px;
     padding: 30px;
     text-align: left;
     display: flex;
@@ -29,17 +36,10 @@ form {
     align-items: center;
 }
 
-.formContainer {
-    background-color: rgba(255, 255, 255, 0.83);
-    border-radius: 30px;
-    height: 500px;
-    width: 500px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
-}
 
-h2 {
+#logInTitle {
     margin-top: 70px;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     font-size: 35px;
     font-weight: bolder;
     color: #273C2C;
@@ -47,35 +47,41 @@ h2 {
     width: 100%;
 }
 
-label {
+#userLabel,
+#passLabel {
     display: flex;
     align-self: flex-start;
     margin-top: 10px;
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="password"] {
+#userInpt,
+#passInpt {
     width: 100%;
     padding: 10px;
-    margin: 5px -10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-input[type="submit"] {
-    margin-top: 30px;
+#logInBtn {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 50px;
     background-color: #AF4626;
     width: 130px;
     border: none;
     color: #fff;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
     cursor: pointer;
+    font-size: 25px;
     font-weight: bold;
 }
 
-input[type="submit"]:hover {
+#logInBtn:hover {
     background-color: #AF4626;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
 }
@@ -90,4 +96,36 @@ input[type="submit"]:hover {
     color: #5bc0de;
     font-size: 14px;
     margin-top: 10px;
+}
+
+
+#forgPass {
+    display: flex;
+    align-self: flex-start;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+#registerContainer {
+    display: flex;
+    margin-top: 10px;
+    align-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#stillNotAcc {
+    display: flex;
+    text-align: center;
+}
+
+#toRegister {
+    display: flex;
+    align-self: center;
+    text-decoration: none;
+    justify-self: center;
+    color: #AF4626;
 }

@@ -26,8 +26,8 @@ export default function HeaderLogin() {
         <div className={fix ? 'headerBarContainer solid':'headerBarContainer'}>
             <header className='Header-of'>
                 <img className="headerLogo" src={logo} alt="Company Logo" />
-                <a href="/" >
-                    <div className="return-button"></div>
+                <a className='spanOfHeader' href='/'>
+                    <span className="return-button"></span>
                 </a>
             </header>
         </div>

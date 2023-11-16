@@ -2,6 +2,7 @@
     display: flex;
     padding: 0px;
     justify-content: space-between;
+    background-color: transparent;
     position: relative;
     transition: 0.4s;
     height: 90px;
@@ -14,7 +15,7 @@
     align-self: center;
 }
 
-nav {
+.navBarOfHome {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +23,7 @@ nav {
     height: 100%;
 }
 
-nav > ul {
+.navBarOfHome > .ulOfHome {
     position: relative;
     display: flex;
     justify-content: center;
@@ -33,6 +34,7 @@ nav > ul {
 
 .headerBarContainer {
     transition: 0.7s;
+    background-color: transparent;
 }
 
 .headerBarContainer.solid {
@@ -42,31 +44,62 @@ nav > ul {
     position: sticky;
     top: 0;
     background-color: #212121;
+    opacity: 0.9;
 }
 
-
-nav > ul li p,
-nav > ul li a {
+.navBarOfHome > .ulOfHome .liOfHome {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: 4px;
+}
+.navBarOfHome > .ulOfHome .liOfHome .paragOfHome,
+.navBarOfHome > .ulOfHome .liOfHome #reserveNow{
     display: flex;
     align-items: center;
     text-decoration: none;
     position: relative;
+    padding: 0 25px;
     height: 100%;
-    margin: 0 25px;
+    width: 100%;
     letter-spacing: 2px;
     font-weight: 600;
     color: white;
     font-size: 17px;
 }
-nav > ul li {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    border-radius: 2px;
+
+.navBarOfHome > .ulOfHome .liOfHome .active {
+    background-color: #111;
+    border-radius: 4px;
+    transition: 0ms;
 }
 
-nav > ul li:hover {
+
+.navBarOfHome > .ulOfHome .liOfHome:hover {
     transition: 0.6s;
     background-color: #111;
     cursor: pointer;
+}
+
+.logIn_btn{
+    margin: 0px 25px;
+    background-color: #AF4626;
+    border-radius: 10px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.logIn_btn > a {
+    padding: 20px;
+    color: white; 
+    font-size: 20px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.logIn_btn:hover{
+    background-color: #b1573b;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }

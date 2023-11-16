@@ -4,7 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     width: 100%;
 }
 
@@ -15,8 +14,7 @@
     align-items: center;
     background-color: rgba(255, 255, 255, 0.83);
     border-radius: 30px;
-    padding-left: 90px;
-    padding-right: 90px;
+    padding: 40px 90px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
@@ -26,7 +24,8 @@
     justify-items: center;
 }
 
-h1 {
+.registerSignUp{
+    margin-top: 30px;
     margin-bottom: 70px;
     font-size: 45px;
     font-weight: bolder;
@@ -35,20 +34,95 @@ h1 {
     width: 100%;
 }
 
-label {
+.offscreen {
+    display: none;
+    grid-row: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.instructions,
+.instructions1,
+.instructions2,
+.instructions3 {
+    font-size: 12px;
+}
+
+.instructions {
+    grid-row: 4;
+    grid-column-start: 3;
+}
+.instructions1 {
+    grid-row: 5;
+    grid-column-start: 3;
+}
+.instructions2 {
+    grid-row: 6;
+    grid-column-start: 3;
+}
+.instructions3 {
+    grid-row: 7;
+    grid-column-start: 3;
+}
+
+.hide {
+    display: none;
+}
+
+.signUpFormLabels {
     display: flex;
     justify-self: start;
     width: 170px;
 }
 
-label, 
-input, 
-select {
+.emailLabel{
+    grid-row-start: 4;
+}
+
+.emailInput {
+    grid-row: 4;
+    grid-column-start: 2;
+}
+.signUpFormLabels.confEmail {
+    grid-row-start: 5;
+}
+
+.confEmailInput {
+    grid-row: 5;
+    grid-column: 2;
+}
+.signUpFormLabels, 
+.signUpInputs, 
+.lvlSelectInput {
     margin-bottom: 20px;
     margin-right: 10px;
 }
 
-input{
+.passLabel {
+    grid-row-start: 6;
+}
+.passInput {
+    grid-row: 6;
+    grid-column: 2;
+}
+.passConfLabel {
+    grid-row: 7;
+}
+.confPassInput {
+    grid-row: 7;
+    grid-column: 2;
+}
+
+.lvlLabel {
+    grid-row-start: 8;
+}
+
+.lvlInput {
+    grid-row: 8;
+    grid-column: 2;
+}
+
+.signUpInputs{
     width: 300px;
     height: 20px;
     padding: 5px;
@@ -57,7 +131,7 @@ input{
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
 }
 
-select {
+.lvlSelectInput {
     height: 30px;
     border-radius: 5px;
     padding: 5px;
@@ -80,7 +154,20 @@ select {
     padding: 10px 20px;
 }
 
-.buttonSignUp:hover {
+.buttonSignUp:disabled {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 25px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #af462697;
+    cursor: auto;
+}
+.buttonSignUp:hover:enabled {
     cursor: pointer;
     background-color: #b1573b;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
