@@ -5,11 +5,9 @@ import LoginBar from "../components/LoginComponent/loginBar/loginBar";
 
 export default function Login() {
     return (
-        <div>
-            <body className="logInBody">
-                <HeaderLogin />
-                <LoginBar />
-            </body>
+        <div id="logInBody">
+            <HeaderLogin />
+            <LoginBar />
             <FooterBar />
         </div>
     )

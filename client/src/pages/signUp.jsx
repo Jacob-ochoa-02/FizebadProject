@@ -4,12 +4,10 @@ import SignUpBar from "../components/signUpComponent/signUpBar/signUpBar";
 
 export default function SignUp() {
     return (
-        <div>
-            <body className="">
-                <HeaderSignUp />
-                <SignUpBar />
-            </body>
-            <FooterBar />
+        <div id="signUpBody">
+            <HeaderSignUp/>
+            <SignUpBar/>
+            <FooterBar/>
         </div>
     )
 }

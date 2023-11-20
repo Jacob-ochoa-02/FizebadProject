@@ -23,15 +23,14 @@ export default function HeaderLogin() {
     };
   });
 
-  return (
-    <div className={fix ? 'headerBarContainer solid' : 'headerBarContainer'}>
-      <header className='Header-of'>
-        <img className="headerLogo" src={logo} alt="Company Logo" />
-        <a href="/">
-          <div className='return-button'></div>
-        </a>
-      </header>
-    </div>
-  );
-
+    return (
+        <div className={fix ? 'headerBarContainer solid':'headerBarContainer'}>
+            <header className='Header-of'>
+                <img className="headerLogo" src={logo} alt="Company Logo" />
+                <a className='spanOfHeader' href='/'>
+                    <span className="return-button"></span>
+                </a>
+            </header>
+        </div>
+    );
 }

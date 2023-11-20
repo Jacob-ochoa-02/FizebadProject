@@ -1,7 +1,7 @@
-body{
+#signUpBody{
     background-image: url('../../../assets/images/signUpImage.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 920px;
+    background-size: 100% 100%;
     font-size: 18px;
     font-weight: bold;
 }
@@ -33,13 +33,14 @@ body{
     position: sticky;
     top: 0;
     background-color: #212121;
+    opacity: 0.9;
 }
 
-a {
+.spanOfHeader {
     align-self: center;
 }
 
-.return-button {
+.spanOfHeader {
     margin-right: 70px;
     border-radius: 100%;
     background-color: #AF4626;
@@ -51,7 +52,8 @@ a {
     width: 54px;
 }
 
-.return-button:hover {
+.spanOfHeader:hover {
     background-color: #b1573b;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
 }

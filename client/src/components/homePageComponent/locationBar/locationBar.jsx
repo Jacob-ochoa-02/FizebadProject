@@ -2,7 +2,6 @@ import './locationBar.css';
 
 export default function locationBar() {
     return (
-
         <div className='locationBarContainer'>
             <h1>¿DÓNDE NOS UBICAMOS?</h1>
             <div className='locationImage'>
