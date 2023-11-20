@@ -12,8 +12,9 @@ export default function HeaderBar() {
                     <label className='contrasenaText' htmlFor="contrasena">Contraseña:</label>
                     <input placeholder="Ingresa tu contraseña" type="password" name="contrasena" id="contrasena" required />
                     <a className='forgetPassword' href='.'>Olvidaste la contraseña?</a>
-                    <input type="submit" value="Confirmar" />
+                    <input type="submit" value="Confirmar" className='confirm_btn' />
                     <Link className='noAcount' to='/signUp' >¿No tienes una cuenta? Regístrate</Link>
+                    <Link className='Prueba' to='/homeLoged' >Home Loged</Link>
                 </form>
             </div>
         </div>

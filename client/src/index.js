@@ -7,6 +7,10 @@ import Home from './pages/home.jsx';
 import SignUp from './pages/signUp.jsx';
 import LogIn from './pages/login';
 
+
+//Prueba de miguel -->
+import HomeLoged from './pages/homeLoged.jsx';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
@@ -14,6 +18,7 @@ root.render(
             <Route path='/' element={<Home />} />
             <Route path='/signUp' element={<SignUp />} />
             <Route path='/logIn' element={<LogIn />} />
+            <Route path='/homeLoged' element={<HomeLoged />} />
         </Routes>
     </BrowserRouter>
 );
