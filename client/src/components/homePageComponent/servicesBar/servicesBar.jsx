@@ -7,13 +7,13 @@ export default function ServicesBar() {
             <h1 className='titleOfServices'>NUESTROS SERVICIOS</h1>
             <div className="servicesSections">
                 <section id="fieldBox">
-                    <button type="button">Canchas</button>
+                    <button className='servBtn' type="button">Canchas</button>
                 </section>
                 <section id="classesBox">
-                    <button type="button">Clases</button>
+                    <button className='servBtn' type="button">Clases</button>
                 </section>
                 <section id="implementsBox">
-                    <button type="button">Implementos</button>
+                    <button className='servBtn' type="button">Implementos</button>
                 </section>
             </div>
             <Link className='reserveNow' to='/signUp'>¡Reserva Ahora!</Link>

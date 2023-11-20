@@ -64,27 +64,38 @@
 
 #logInBtn {
     display: flex;
-    align-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
     justify-content: center;
-    margin-top: 50px;
-    background-color: #AF4626;
-    width: 130px;
-    border: none;
-    color: #fff;
-    padding: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
     border-radius: 20px;
-    cursor: pointer;
     font-size: 25px;
-    font-weight: bold;
+    background-color: #AF4626;
+    border: none;
+    color: white;
+    padding: 10px 20px;
 }
 
-#logInBtn:hover {
-    background-color: #AF4626;
+
+#logInBtn:disabled {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 25px;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #af462697;
+    cursor: auto;
+}
+
+#logInBtn:hover:enabled {
+    cursor: pointer;
+    background-color: #b1573b;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.8);
 }
-
 .error-message {
     color: #d9534f;
     font-size: 14px;
