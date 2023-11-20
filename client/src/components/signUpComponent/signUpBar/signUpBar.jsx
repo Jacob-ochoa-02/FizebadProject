@@ -11,30 +11,41 @@ export default function SignUpBar() {
     const [namesReg, setName] = useState('');
     const [lastNameReg, setLastName] = useState('');
     const [phoneNumReg, setphoneNumb] = useState('');
+    const [memberShip, setMemberShip] = useState('');
     const [levelReg, setLevel] = useState('');
     const [levelForSelect, setSelectLevel] = useState([]);
+
     const signUp = () => {
-        Axios.post('http://localhost:8000/signUp', { 
+        Axios.post('http://localhost:8000/signUp', {
             email: emailReg,
             password: passReg,
-            DocumentCC:identificationReg,
+            DocumentCC: identificationReg,
             Birth: birthDateReg,
             Name: namesReg,
             LastName: lastNameReg,
             phoneNumber: phoneNumReg,
             lvlType: levelReg
-    }).then((res) => {
-        console.log(res);
-    });
+        }).then((res) => {
+            console.log(res);
+        });
     }
-    useEffect(()=> {
+    useEffect(() => {
         const fetchingData = async () => {
             const response = await axios.get('http://localhost:8000/levels');
             setSelectLevel(response.data);
         }
         fetchingData();
     }, []);
-    
+
+    const member = () => {
+        let parag = document.getElementById('memberParagraph');
+        let memberLab = document.getElementById('memberLabel');
+        let memberInp = document.getElementById('memberInput');
+        parag.style.display = 'none';
+        memberLab.style.display = 'block';
+        memberInp.style.display = 'block';
+    }
+
     return (
         <div className="signUpContent">
             <div className="formContent">
@@ -47,44 +58,49 @@ export default function SignUpBar() {
                     <label htmlFor="">Apellidos:</label>
                     <input type="text" onChange={(e) => {
                         setLastName(e.target.value);
-                    }}/>
+                    }} />
                     <label htmlFor="">Documento:</label>
                     <input type="text" onChange={(e) => {
                         setIdentification(e.target.value);
-                    }}/>
+                    }} />
                     <label htmlFor="">Teléfono/Celular:</label>
                     <input type="text" onChange={(e) => {
                         setphoneNumb(e.target.value);
-                    }}/>
+                    }} />
                     <label htmlFor="">Fecha Nacimiento:</label>
                     <input type="date" onChange={(e) => {
                         setBirthDate(e.target.value);
-                    }}/>
+                    }} />
                     <br />
                     <div></div>
                     <label htmlFor="" id='mailer'>Correo/Email:</label>
                     <input type="email" onChange={(e) => {
                         setEmail(e.target.value);
-                    }}/>
+                    }} />
                     <label htmlFor="">Confirmar Correo:</label>
                     <input type="email" />
                     <label htmlFor="">Contraseña:</label>
                     <input type="password" onChange={(e) => {
                         setPass(e.target.value);
-                    }}/>
+                    }} />
                     <label htmlFor="">Confirmar Contraseña:</label>
                     <input type="password" />
                     <label htmlFor="">Nivel:</label>
-                    <select name="selection" value={levelReg} onChange={(e)=> {
+                    <select name="selection" value={levelReg} onChange={(e) => {
                         setLevel(e.target.value);
                     }}>
-                        {levelForSelect.map((option)=>(
+                        {levelForSelect.map((option) => (
                             <option value={option.ID_level} key={option.ID_level}>{option.Name}</option>
                         ))}
                     </select>
+                    <p id="memberParagraph" onClick={member}>¿Ya eres miembro?</p>
+                    <label htmlFor="" id="memberLabel"> Código Miembro:</label>
+                    <input type="text" id="memberInput" onChange={(e) => {
+                        setMemberShip(e.target.value);
+                    }} />
                 </div>
-                    <button className="buttonSignUp" onClick={signUp}>Confirmar</button>
+                <button className="buttonSignUp" onClick={signUp}>Confirmar</button>
             </div>
-        </div>
+        </div >
     )
 }
