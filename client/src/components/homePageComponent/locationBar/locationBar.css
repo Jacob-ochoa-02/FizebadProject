@@ -1,7 +1,6 @@
 .locationBarContainer {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
 }
 
 #locationTitle {
@@ -31,11 +30,12 @@
 .Item {
     margin: 0 100px;
 }
+
 .GoMaps {
-    margin-bottom: 40px;
+    margin-top: 20px;
     padding: 20px;
-    height: 40px;
-    width: 130px;
+    height: 30px;
+    width: 120px;
     color: white;
     text-decoration: none;
     font-size: 28px;
