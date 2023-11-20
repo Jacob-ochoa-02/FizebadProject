@@ -147,6 +147,7 @@ export default function SignUpBar() {
                     <input 
                         type="text" 
                         id="forEmailInput"
+                        place
                         // ref={userRef}
                         autoComplete="off"
                         className="signUpInputs emailInput" 
