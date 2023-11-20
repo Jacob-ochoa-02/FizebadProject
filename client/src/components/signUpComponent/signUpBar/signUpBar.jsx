@@ -7,6 +7,7 @@ import axios from "axios";
 
 const emailRGX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}[@][a-zA-Z][a-zA-Z]{4,20}[.][a-z]{2,4}$/;
 const passRGX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@$#%&.]).{8,20}$/;
+const docRGX = /^(\d){8,15}$/;
 
 export default function SignUpBar() {
     // const userRef = useRef();
@@ -32,21 +33,20 @@ export default function SignUpBar() {
     const [successMsg, setSuccessMsg] = useState(false);
 
     const [identificationReg, setIdentification] = useState('');
+    const [validID, setValidID] = useState(false);
+    const [IDFocus, setIDFocus] = useState(false);
+
     const [birthDateReg, setBirthDate] = useState('');
     const [namesReg, setName] = useState('');
     const [lastNameReg, setLastName] = useState('');
     const [phoneNumReg, setphoneNumb] = useState('');
     const [levelReg, setLevel] = useState('');
     const [levelForSelect, setSelectLevel] = useState([]);
+    const [memberShip, setMemberShip] = useState('');
 
-    // useEffect(()=> {
-    //     userRef.current.focus();
-    // }, [])
 
     useEffect(() => {
         const result = emailRGX.test(emailReg);
-        console.log(result);
-        console.log(emailReg);
         setValidEmail(result);
         const match = emailReg === matchEmail;
         setValidEmailMatch(match);
@@ -54,16 +54,19 @@ export default function SignUpBar() {
 
     useEffect(() => {
         const result = passRGX.test(passReg);
-        console.log(result);
-        console.log(passReg);
         setValidPass(result);
         const match = passReg === matchPass;
         setValidMatchPass(match);
     }, [passReg, matchPass])
     
+    useEffect(() => {
+        const result = docRGX.test(identificationReg);
+        setValidID(result);
+    }, [identificationReg]);
+
     useEffect(()=> {
         setErrorMsg('');
-    }, [emailReg, matchEmail, passReg, matchPass])
+    }, [emailReg, matchEmail, passReg, matchPass, identificationReg])
 
     const signUp = () => {
         Axios.post('http://localhost:8000/signUp', { 
@@ -88,6 +91,15 @@ export default function SignUpBar() {
         fetchingData();
     }, []);
     
+    const member = () => {
+        let parag = document.getElementById('memberParagraph');
+        let memberLab = document.getElementById('memberLabel');
+        let memberInp = document.getElementById('memberInput');
+        parag.style.display = 'none';
+        memberLab.style.display = 'block';
+        memberInp.style.display = 'block';
+    }
+
     return (
         <div className="signUpContent">
             <section className="formContent">
@@ -95,17 +107,26 @@ export default function SignUpBar() {
                 <p ref={errRef} className={errMsg ? "errmsg":"offscreen"} aria-live="assertive">{errMsg}</p>
                 <form className="forms" id="signingUp" onSubmit={signUp}>
                     <label htmlFor="names" className="signUpFormLabels ns">Nombres:</label>
-                    <input type="text" required className="signUpInputs" onChange={(e) => {
+                    <input type="text" required className="signUpInputs" placeholder="Ingresa tu nombre" onChange={(e) => {
                         setName(e.target.value);
                     }} />
                     <label htmlFor="lstNames" className="signUpFormLabels lastns">Apellidos:</label>
-                    <input type="text" required className="signUpInputs" onChange={(e) => {
+                    <input type="text" required className="signUpInputs" placeholder="Ingresa tus apellidos" onChange={(e) => {
                         setLastName(e.target.value);
                     }}/>
                     <label htmlFor="identificn" className="signUpFormLabels ident">Documento(C.C):</label>
-                    <input type="text" required className="signUpInputs" onChange={(e) => {
-                        setIdentification(e.target.value);
-                    }}/>
+                    <input type="text" 
+                            className="signUpInputs" 
+                            id="forIDInput"
+                            placeholder="Documento de identidad"
+                            onChange={(e) => {
+                                setIdentification(e.target.value);
+                            }}
+                            required
+                            aria-invalid={validID  ? "false":"true"}
+                            onFocus={() => setIDFocus(true)}
+                            onBlur={() => setIDFocus(false)}
+                    />
                     <label htmlFor="numberPhone" className="signUpFormLabels phone">Teléfono/Celular:</label>
                     <input type="text" className="signUpInputs" onChange={(e) => {
                         setphoneNumb(e.target.value);
@@ -237,8 +258,13 @@ export default function SignUpBar() {
                             <option value={option.ID_level} key={option.ID_level}>{option.Name}</option>
                         ))}
                     </select>
+                    <p id="memberParagraph" onClick={member}>¿Ya eres miembro?</p>
+                    <label htmlFor="" id="memberLabel"> Código Miembro:</label>
+                    <input type="text" id="memberInput" onChange={(e) => {
+                        setMemberShip(e.target.value);
+                    }} />
                 </form>
-                    <button disabled={!namesReg || !lastNameReg || !identificationReg || !validEmail || !validPass || !validEmailMatch || !validMatchPass ? true: false} className="buttonSignUp" form="signingUp" >Confirmar</button>
+                    <button disabled={!namesReg || !lastNameReg || !validID || !validEmail || !validPass || !validEmailMatch || !validMatchPass ? true: false} className="buttonSignUp" form="signingUp" >Confirmar</button>
             </section>
         </div>
     )
