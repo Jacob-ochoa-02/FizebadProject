@@ -10,7 +10,7 @@ export default function FooterBar() {
             </section>
             <div className="otherLinks">
                 <a href=".">
-                    <img src={logo} className='FooterLogo' alt='Company logo'/>
+                    <img src={logo} className='FooterLogo' alt='Company logo' />
                 </a>
                 <div className="socialNetworks">
                     <a href="https://www.facebook.com/ClubHaciendaFizebad/" target='blank'>

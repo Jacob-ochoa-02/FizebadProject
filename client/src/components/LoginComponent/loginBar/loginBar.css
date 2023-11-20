@@ -1,7 +1,8 @@
+
 #logInBody {
     background-image: url('../../../assets/images/loginImage.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 920px;
+    background-size: 100%;
     font-size: 18px;
     font-weight: bold;
 }
@@ -16,6 +17,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
 }
+
 
 .formContainer {
     background-color: rgba(255, 255, 255, 0.83);
@@ -50,7 +52,6 @@
 #passLabel {
     display: flex;
     align-self: flex-start;
-    margin-top: 10px;
     font-weight: bold;
 }
 
@@ -60,6 +61,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin-bottom: 20;
 }
 
 #logInBtn {
@@ -68,6 +70,7 @@
     justify-content: center;
     margin-top: 50px;
     background-color: #AF4626;
+    height: 40px;
     width: 130px;
     border: none;
     color: #fff;
@@ -96,7 +99,6 @@
     font-size: 14px;
     margin-top: 10px;
 }
-
 
 #forgPass {
     display: flex;
