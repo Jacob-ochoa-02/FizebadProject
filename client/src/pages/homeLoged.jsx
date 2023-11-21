@@ -4,11 +4,9 @@ import HeaderBarLoged from "../components/homePageLogedComponent/headerLogedBar/
 
 export default function HomeLoged() {
     return (
-        <div>
-            <body className="bodyHomeLoged">
-                <HeaderBarLoged />
-                <LocationBar />
-            </body>
+        <div id="bodyHomeLoged">
+            <HeaderBarLoged />
+            <LocationBar />
             <FooterBar />
         </div>
     )

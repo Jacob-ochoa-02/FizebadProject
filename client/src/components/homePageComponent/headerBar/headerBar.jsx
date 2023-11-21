@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from "../../../assets/images/logo.png"
 import { Link } from "react-router-dom";
-import { Link as LinkScroll} from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
 import './headerBar.css'
 
 export default function HeaderBar() {
@@ -32,9 +32,9 @@ export default function HeaderBar() {
       <header className='Header-of'>
         <img className="headerLogo" src={logo} alt="Company Logo" />
         <nav className='navBarOfHome'>
-          <ul className={click ? 'ulOfHome active':'ulOfHome'}>
+          <ul className={click ? 'ulOfHome active' : 'ulOfHome'}>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>INICIO</LinkScroll></li>
-            <li className='liOfHome'><LinkScroll className='paragOfHome' to="services" spy={true} smooth={true} offsetTop={0} duration={500} onClick={closeMenu}>SERVICIOS</LinkScroll></li>
+            <li className='liOfHome'><LinkScroll className='paragOfHome' to="services" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>SERVICIOS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="location" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>UBICACIÓN</LinkScroll></li>
             <li className='liOfHome'><Link id="reserveNow" to="/signUp">RESERVA</Link></li>
           </ul>
