@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 export default function ServicesBar() {
     return (
-        <div className="servicesBarContainer">
-            <h1>NUESTROS SERVICIOS</h1>
+        <div className="services" id='services'>
+            <h1 className='titleOfServices'>NUESTROS SERVICIOS</h1>
             <div className="servicesSections">
-                <section className="fieldBox">
-                    <button type="button">Canchas</button>
+                <section id="fieldBox">
+                    <button className='servBtn' type="button">Canchas</button>
                 </section>
-                <section className="classesBox">
-                    <button type="button">Clases</button>
+                <section id="classesBox">
+                    <button className='servBtn' type="button">Clases</button>
                 </section>
-                <section className="implementsBox">
-                    <button type="button">Implementos</button>
+                <section id="implementsBox">
+                    <button className='servBtn' type="button">Implementos</button>
                 </section>
             </div>
             <Link className='reserveNow' to='/signUp'>¡Reserva Ahora!</Link>

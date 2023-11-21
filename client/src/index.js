@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home.jsx';
 import SignUp from './pages/signUp.jsx';
-import LogIn from './pages/login';
+import LogIn from './pages/login.jsx';
 
 
 //Prueba de miguel -->
