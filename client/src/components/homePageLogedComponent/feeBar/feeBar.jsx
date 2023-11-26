@@ -6,6 +6,7 @@ export default function feeBar() {
             <h1 className='titleOfFee'>NUESTRAS TARIFAS</h1>
             <div className="feeCanje">
                 <h2 className='titleOfFee2'>Socio en canje</h2>
+                <h2 className='prueba'>Prueba</h2>
             </div>
             <div className="feeMembresia">
                 <h2 className='titleOfFee2'>Socio en membresía</h2>
