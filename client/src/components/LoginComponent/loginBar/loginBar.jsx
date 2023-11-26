@@ -1,34 +1,38 @@
-import { useEffect, useState } from 'react';
-import './loginBar.css';
+import { useState } from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import './loginBar.css';
 
-export default function HeaderBar() {
-    const [emailLog, setEmail] = useState('')
-    const [passLog, setPass] = useState('')
+const LogIn = () => {
+    const [emailLog, setEmail] = useState('');
+    const [passLog, setPass] = useState('');
+    const navigate = useNavigate();
 
-    let navigate = useNavigate();
+    Axios.defaults.withCredentials = true;
 
-    const validating = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-        Axios.post('http://localhost:8000/user', { 
+        Axios.post('http://localhost:8000/logIn', {
             email: emailLog,
             password: passLog,
-    }).then((res) => {
-        if(res.data === 'Success') {
-            navigate('/home');
-        }else {
-            alert('Could\'nt log in :c');
-        }
-    });
+        }).then((res) => {
+            if (res.data.Status === "Success") {
+                navigate('/home');
+            } else {
+                alert(res.data.Error);
+            }
+        });
     }
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+      };
 
     return (
         <div className='loginContainer'>
             <div className='formContainer'>
                 <h2 id='logInTitle'>Acceder</h2>
-                <form className="formulario" onSubmit={validating}>
+                <form className="formulario" onSubmit={handleSubmit}>
                     <label htmlFor="usuario" id='userLabel'>Usuario:</label>
                     <input placeholder="Ingresa tu usuario" type="text" name="usuario" id="userInpt" required 
                     onChange={(e)=>{
@@ -43,10 +47,12 @@ export default function HeaderBar() {
                     <input disabled={!emailLog || !passLog} type="submit" value="Confirmar" id='logInBtn' />
                     <span id='registerContainer'>
                     <p id='stillNotAcc'>¿Aún no tienes una cuenta?</p>
-                    <Link to={'/signUp'} id='toRegister'>¡Regístrate Ahora!</Link>
+                    <Link to={'/signUp'} id='toRegister' onClick={scrollToTop}>¡Regístrate Ahora!</Link>
                     </span>
                 </form>
             </div>
         </div>
     );
 }
+
+export default LogIn;
