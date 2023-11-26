@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home.jsx';
 import SignUp from './pages/signUp.jsx';
 import LogIn from './pages/login.jsx';
-import Reserve from './pages/reserve.jsx';
 
 
 //Prueba de miguel -->
@@ -20,7 +19,6 @@ root.render(
             <Route path='/signUp' element={<SignUp />} />
             <Route path='/logIn' element={<LogIn />} />
             <Route path='/homeLoged' element={<HomeLoged />} />
-            <Route path='/reserve' element={<Reserve />} />
         </Routes>
     </BrowserRouter>
 );
