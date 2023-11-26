@@ -3,7 +3,6 @@ import React, { useRef, useEffect, useState } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from 'axios';
-import axios from "axios";
 
 const emailRGX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}[@][a-zA-Z][a-zA-Z]{4,20}[.][a-z]{2,4}$/;
 const passRGX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@$#%&.]).{8,20}$/;
@@ -30,11 +29,9 @@ export default function SignUpBar() {
     const [passMatchFocus, setPassMatchFocus] = useState(false);
 
     const [errMsg, setErrorMsg] = useState('');
-    const [successMsg, setSuccessMsg] = useState(false);
 
     const [identificationReg, setIdentification] = useState('');
     const [validID, setValidID] = useState(false);
-    const [IDFocus, setIDFocus] = useState(false);
 
     const [birthDateReg, setBirthDate] = useState('');
     const [namesReg, setName] = useState('');
@@ -77,6 +74,7 @@ export default function SignUpBar() {
             Name: namesReg,
             LastName: lastNameReg,
             phoneNumber: phoneNumReg,
+            memberShips: memberShip,
             lvlType: levelReg
     }).then((res) => {
         console.log(res);
@@ -85,7 +83,7 @@ export default function SignUpBar() {
 
     useEffect(()=> {
         const fetchingData = async () => {
-            const response = await axios.get('http://localhost:8000/levels');
+            const response = await Axios.get('http://localhost:8000/levels');
             setSelectLevel(response.data);
         }
         fetchingData();
@@ -124,11 +122,9 @@ export default function SignUpBar() {
                             }}
                             required
                             aria-invalid={validID  ? "false":"true"}
-                            onFocus={() => setIDFocus(true)}
-                            onBlur={() => setIDFocus(false)}
                     />
                     <label htmlFor="numberPhone" className="signUpFormLabels phone">Teléfono/Celular:</label>
-                    <input type="text" className="signUpInputs" onChange={(e) => {
+                    <input type="text" className="signUpInputs" placeholder="Ingresa tu teléfono" onChange={(e) => {
                         setphoneNumb(e.target.value);
                     }}/>
                     <label htmlFor="dateBirth" required className="signUpFormLabels birth">Fecha Nacimiento:</label>
@@ -147,7 +143,7 @@ export default function SignUpBar() {
                     <input 
                         type="text" 
                         id="forEmailInput"
-                        place
+                        placeholder="Ingresa tu correo electrónico"
                         // ref={userRef}
                         autoComplete="off"
                         className="signUpInputs emailInput" 
@@ -178,6 +174,7 @@ export default function SignUpBar() {
                     <input 
                         type="text" 
                         className="signUpInputs confEmailInput"
+                        placeholder="Confirma tu correo electrónico"
                         id="confEmailInpt"
                         autoComplete="off"
                         onChange={(e) => {
@@ -204,7 +201,7 @@ export default function SignUpBar() {
                     </label>
                     <input type="password" 
                             className="signUpInputs passInput" 
-                            id="forPassInput"
+                            placeholder="Ingresa tu contraseña"                            id="forPassInput"
                             onChange={(e) => {
                                 setPass(e.target.value);
                             }}
@@ -236,6 +233,7 @@ export default function SignUpBar() {
                     </label>
                     <input 
                         type="password" 
+                        placeholder="Confirmar contraseña"
                         className="signUpInputs confPassInput" 
                         id="confPassInpt"
                         onChange={(e) => {
