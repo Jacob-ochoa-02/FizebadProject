@@ -86,6 +86,7 @@ export default function SignUpBar() {
         const fetchingData = async () => {
             const response = await Axios.get('http://localhost:8000/levels');
             setSelectLevel(response.data);
+            console.log(response.data);
         }
         fetchingData();
     }, []);
