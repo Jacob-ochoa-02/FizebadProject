@@ -10,7 +10,4 @@ export default function HomeLoged() {
             <FooterBar />
         </div>
     )
-    //<DescriptionBar />
-    //<NewsBar />
-    //<ServicesBar />
 }
