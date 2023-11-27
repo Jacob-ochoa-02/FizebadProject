@@ -29,11 +29,11 @@ export default function SignUpBar() {
     const [passMatchFocus, setPassMatchFocus] = useState(false);
 
     const [errMsg, setErrorMsg] = useState('');
-    const [successMsg, setSuccessMsg] = useState(false);
+const [successMsg, setSuccessMsg] = useState(false);
 
     const [identificationReg, setIdentification] = useState('');
     const [validID, setValidID] = useState(false);
-    const [IDFocus, setIDFocus] = useState(false);
+const [IDFocus, setIDFocus] = useState(false);
 
     const [birthDateReg, setBirthDate] = useState('');
     const [namesReg, setName] = useState('');
@@ -76,6 +76,7 @@ export default function SignUpBar() {
             Name: namesReg,
             LastName: lastNameReg,
             phoneNumber: phoneNumReg,
+            memberShips: memberShip,
             lvlType: levelReg
         }).then((res) => {
             console.log(res);
@@ -114,20 +115,19 @@ export default function SignUpBar() {
                         setLastName(e.target.value);
                     }} />
                     <label htmlFor="identificn" className="signUpFormLabels ident">Documento(C.C):</label>
-                    <input type="text"
-                        className="signUpInputs"
-                        id="forIDInput"
-                        placeholder="Documento de identidad"
-                        onChange={(e) => {
-                            setIdentification(e.target.value);
-                        }}
-                        required
-                        aria-invalid={validID ? "false" : "true"}
-                        onFocus={() => setIDFocus(true)}
-                        onBlur={() => setIDFocus(false)}
+
+                    <input type="text" 
+                            className="signUpInputs" 
+                            id="forIDInput"
+                            placeholder="Documento de identidad"
+                            onChange={(e) => {
+                                setIdentification(e.target.value);
+                            }}
+                            required
+                            aria-invalid={validID  ? "false":"true"}
                     />
                     <label htmlFor="numberPhone" className="signUpFormLabels phone">Teléfono/Celular:</label>
-                    <input type="text" className="signUpInputs" onChange={(e) => {
+                    <input type="text" className="signUpInputs" placeholder="Ingresa tu teléfono" onChange={(e) => {
                         setphoneNumb(e.target.value);
                     }} />
                     <label htmlFor="dateBirth" required className="signUpFormLabels birth">Fecha Nacimiento:</label>
@@ -146,7 +146,7 @@ export default function SignUpBar() {
                     <input
                         type="text"
                         id="forEmailInput"
-                        placeholder="Ingresa tu Email"
+                        placeholder="Ingresa tu correo electrónico"
                         // ref={userRef}
                         autoComplete="off"
                         className="signUpInputs emailInput"
@@ -177,8 +177,8 @@ export default function SignUpBar() {
                     <input
                         type="text"
                         className="signUpInputs confEmailInput"
+                        placeholder="Confirma tu correo electrónico"
                         id="confEmailInpt"
-                        placeholder="Confirmar Email"
                         autoComplete="off"
                         onChange={(e) => {
                             setMatchEmail(e.target.value);
@@ -202,18 +202,17 @@ export default function SignUpBar() {
                             <FontAwesomeIcon icon={faTimes} />
                         </span>
                     </label>
-                    <input type="password"
-                        className="signUpInputs passInput"
-                        placeholder="Ingresa tu contraseña"
-                        id="forPassInput"
-                        onChange={(e) => {
-                            setPass(e.target.value);
-                        }}
-                        required
-                        aria-invalid={validPass ? "false" : "true"}
-                        aria-describedby="passNote"
-                        onFocus={() => setPassFocus(true)}
-                        onBlur={() => setPassFocus(false)}
+                    <input type="password" 
+                            className="signUpInputs passInput" 
+                            placeholder="Ingresa tu contraseña"                            id="forPassInput"
+                            onChange={(e) => {
+                                setPass(e.target.value);
+                            }}
+                            required
+                            aria-invalid={validPass  ? "false":"true"}
+                            aria-describedby="passNote"
+                            onFocus={() => setPassFocus(true)}
+                            onBlur={() => setPassFocus(false)}
                     />
                     <p id="passNote" className={passFocus && !validPass ? "instructions2" : "offscreen"}>
                         <FontAwesomeIcon icon={faInfoCircle} />
@@ -235,11 +234,11 @@ export default function SignUpBar() {
                             <FontAwesomeIcon icon={faTimes} />
                         </span>
                     </label>
-                    <input
-                        type="password"
-                        className="signUpInputs confPassInput"
+                    <input 
+                        type="password" 
+                        placeholder="Confirmar contraseña"
+                        className="signUpInputs confPassInput" 
                         id="confPassInpt"
-                        placeholder="Confirma tu contraseña"
                         onChange={(e) => {
                             setMatchPass(e.target.value);
                         }}
