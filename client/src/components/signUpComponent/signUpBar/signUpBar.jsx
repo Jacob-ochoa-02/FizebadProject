@@ -108,15 +108,15 @@ export default function SignUpBar() {
                 <h1 className="registerSignUp">Regístrate</h1>
                 <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                 <form className="forms" id="signingUp" onSubmit={signUp}>
-                    <label htmlFor="names" className="signUpFormLabels ns">Nombres:</label>
+                    <label htmlFor="signUpInputs" className="signUpFormLabels ns">Nombres:</label>
                     <input type="text" required className="signUpInputs" placeholder="Ingresa tu nombre" onChange={(e) => {
                         setName(e.target.value);
                     }} />
-                    <label htmlFor="lstNames" className="signUpFormLabels lastns">Apellidos:</label>
+                    <label htmlFor="signUpInputs" className="signUpFormLabels lastns">Apellidos:</label>
                     <input type="text" required className="signUpInputs" placeholder="Ingresa tus apellidos" onChange={(e) => {
                         setLastName(e.target.value);
                     }} />
-                    <label htmlFor="identificn" className="signUpFormLabels ident">Documento(C.C):</label>
+                    <label htmlFor="forIDInput" className="signUpFormLabels ident">Documento(C.C):</label>
                     <input type="text"
                         className="signUpInputs"
                         id="forIDInput"
@@ -126,8 +126,6 @@ export default function SignUpBar() {
                         }}
                         required
                         aria-invalid={validID ? "false" : "true"}
-                        onFocus={() => setIDFocus(true)}
-                        onBlur={() => setIDFocus(false)}
                     />
                     <label htmlFor="numberPhone" className="signUpFormLabels phone">Teléfono/Celular:</label>
                     <input type="text" className="signUpInputs" placeholder="Ingresa tu teléfono" onChange={(e) => {
@@ -240,6 +238,7 @@ export default function SignUpBar() {
                     </label>
                     <input
                         type="password"
+                        placeholder="Confirmar contraseña"
                         className="signUpInputs confPassInput"
                         id="confPassInpt"
                         onChange={(e) => {
@@ -264,7 +263,7 @@ export default function SignUpBar() {
                         ))}
                     </select>
                     <p id="memberParagraph" onClick={member}>¿Ya eres miembro?</p>
-                    <label htmlFor="" id="memberLabel"> Código Miembro:</label>
+                    <label htmlFor="memberInput" id="memberLabel"> Código Miembro:</label>
                     <input type="text" id="memberInput" onChange={(e) => {
                         setMemberShip(e.target.value);
                     }} />

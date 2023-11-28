@@ -44,7 +44,7 @@ export default function HeaderBar() {
         <img className="headerLogo" src={logo} alt="Company Logo" />
         <nav className={`navBarOfHome ${clicked ? 'active' : ''}`}>
           <ul className={click ? 'ulOfHome active' : 'ulOfHome'}>
-            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>INICIO</LinkScroll></li>
+            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={scrollToTop}>INICIO</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="news" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>NOTICIAS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="services" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>SERVICIOS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="location" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>UBICACIÓN</LinkScroll></li>
