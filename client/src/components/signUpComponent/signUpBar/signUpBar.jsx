@@ -29,9 +29,11 @@ export default function SignUpBar() {
     const [passMatchFocus, setPassMatchFocus] = useState(false);
 
     const [errMsg, setErrorMsg] = useState('');
+const [successMsg, setSuccessMsg] = useState(false);
 
     const [identificationReg, setIdentification] = useState('');
     const [validID, setValidID] = useState(false);
+const [IDFocus, setIDFocus] = useState(false);
 
     const [birthDateReg, setBirthDate] = useState('');
     const [namesReg, setName] = useState('');
