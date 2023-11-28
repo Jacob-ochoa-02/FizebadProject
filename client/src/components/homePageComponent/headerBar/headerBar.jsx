@@ -22,8 +22,6 @@ export default function HeaderBar() {
       icon.classList.toggle("open");
     });
   };
-
-  // Fix the header bar
   function setFixed() {
     if (window.scrollY > 10) {
       setFix(true);
@@ -34,8 +32,6 @@ export default function HeaderBar() {
 
   useEffect(() => {
     window.addEventListener('scroll', setFixed);
-
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', setFixed);
     };

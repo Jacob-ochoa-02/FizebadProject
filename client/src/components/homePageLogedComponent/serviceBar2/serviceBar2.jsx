@@ -1,4 +1,4 @@
-import './newsBar2.css';
+import './serviceBar2.css';
 import { Link } from 'react-router-dom';
 
 export default function locationBar() {

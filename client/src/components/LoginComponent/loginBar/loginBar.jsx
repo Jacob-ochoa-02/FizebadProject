@@ -26,7 +26,7 @@ const LogIn = () => {
 
     const scrollToTop = () => {
         window.scrollTo(0, 0);
-      };
+    };
 
     return (
         <div className='loginContainer'>
@@ -34,20 +34,20 @@ const LogIn = () => {
                 <h2 id='logInTitle'>Acceder</h2>
                 <form className="formulario" onSubmit={handleSubmit}>
                     <label htmlFor="usuario" id='userLabel'>Usuario:</label>
-                    <input placeholder="Ingresa tu usuario" type="text" name="usuario" id="userInpt" required 
-                    onChange={(e)=>{
-                        setEmail(e.target.value);
-                    }}/>
+                    <input placeholder="Ingresa tu usuario" type="text" name="usuario" id="userInpt" required
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                        }} />
                     <label htmlFor="contrasena" id='passLabel'>Contraseña:</label>
-                    <input placeholder="Ingresa tu contraseña" type="password" id="passInpt" required 
-                    onChange={(e)=> {
-                        setPass(e.target.value);
-                    }}/>
+                    <input placeholder="Ingresa tu contraseña" type="password" id="passInpt" required
+                        onChange={(e) => {
+                            setPass(e.target.value);
+                        }} />
                     <a href='/forgotPass' id='forgPass'>¿Olvidaste tu contraseña?</a>
                     <input disabled={!emailLog || !passLog} type="submit" value="Confirmar" id='logInBtn' />
                     <span id='registerContainer'>
-                    <p id='stillNotAcc'>¿Aún no tienes una cuenta?</p>
-                    <Link to={'/signUp'} id='toRegister' onClick={scrollToTop}>¡Regístrate Ahora!</Link>
+                        <p id='stillNotAcc'>¿Aún no tienes una cuenta?</p>
+                        <Link to={'/signUp'} id='toRegister' onClick={scrollToTop}>¡Regístrate Ahora!</Link>
                     </span>
                 </form>
             </div>

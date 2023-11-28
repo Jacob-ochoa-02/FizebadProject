@@ -68,8 +68,8 @@ export default function SignUpBar() {
         setErrorMsg('');
     }, [emailReg, matchEmail, passReg, matchPass, identificationReg])
 
-    const signUp = () => {
-        Axios.post('http://localhost:8000/signUp', {
+    const signUp = async () => {
+        await Axios.post('http://localhost:8000/signUp', {
             email: emailReg,
             password: passReg,
             DocumentCC: identificationReg,
