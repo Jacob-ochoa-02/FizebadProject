@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from "../../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { Link as LinkScroll} from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
 import BurguerButton from '../../burguerButton';
 import './headerBar.css';
 
@@ -16,14 +16,14 @@ export default function HeaderBar() {
     window.scrollTo(0, 0);
   };
 
-const handleClick = () => {
-  setClicked(!clicked);
-  icons.forEach (icon => {  
-    icon.classList.toggle("open");
-  });
-};
+  const handleClick = () => {
+    setClicked(!clicked);
+    icons.forEach(icon => {
+      icon.classList.toggle("open");
+    });
+  };
 
-// Fix the header bar
+  // Fix the header bar
   function setFixed() {
     if (window.scrollY > 10) {
       setFix(true);
@@ -31,7 +31,7 @@ const handleClick = () => {
       setFix(false);
     }
   }
-  
+
   useEffect(() => {
     window.addEventListener('scroll', setFixed);
 
@@ -47,8 +47,8 @@ const handleClick = () => {
       <header className='Header-of'>
         <img className="headerLogo" src={logo} alt="Company Logo" />
         <nav className={`navBarOfHome ${clicked ? 'active' : ''}`}>
-          <ul className={click ? 'ulOfHome active':'ulOfHome'}>
-            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>INICIO</LinkScroll></li>
+          <ul className={click ? 'ulOfHome active' : 'ulOfHome'}>
+            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={scrollToTop}>INICIO</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="news" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>NOTICIAS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="services" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>SERVICIOS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="location" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>UBICACIÓN</LinkScroll></li>
@@ -57,9 +57,9 @@ const handleClick = () => {
             <Link to='/logIn' onClick={scrollToTop}>INICIAR SESIÓN</Link>
           </span>
         </nav>
-          <div className='burguerBtn'onClick={handleClick}>
-            <BurguerButton />
-          </div>
+        <div className='burguerBtn' onClick={handleClick}>
+          <BurguerButton />
+        </div>
       </header>
     </div >
   );
