@@ -42,7 +42,7 @@ const verifyUser = (req, res, next) => {
 };
 
 app.get('/verifyUser', verifyUser, (req, res)=> {
-    return res.json({Status: "Success", Email: req.email});
+    return res ? res.json({Status: "Success", Email: req.email}): res.json({Status: "Error"});
 });
 
 app.get('/levels', (req,res)=> {
@@ -89,6 +89,16 @@ app.post('/logIn', async (req, res)=>{
     });
 });
 
+app.get('/reserving', async (req, res) => {
+    const emails = req.body.email;
+    db.query("SELECT * from reserve LEFT JOIN users ON Email_FK = ?", [emails], (err, data) => {
+        if(data.length > 0) {
+            
+        }else {
+            return res.json({Error: "Error on fetching data from database..."});
+        }
+    })
+})
 
 app.listen(8000, () => {
     console.log("Server running in port http://localhost:8000/");

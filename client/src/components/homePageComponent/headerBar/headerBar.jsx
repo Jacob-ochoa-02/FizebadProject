@@ -13,17 +13,20 @@ export default function HeaderBar() {
   const closeMenu = () => setClick(true);
 
   const scrollToTop = () => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: smooth,
+    });
   };
 
-const handleClick = async () => {
-  setClicked(!clicked);
-  icons.forEach (icon => {  
-    icon.classList.toggle("open");
-  });
-};
+  const handleClick = async () => {
+    setClicked(!clicked);
+    icons.forEach (icon => {  
+      icon.classList.toggle("open");
+    });
+  };
 
-// Fix the header bar
   function setFixed() {
     if (window.scrollY > 10) {
       setFix(true);
@@ -34,21 +37,17 @@ const handleClick = async () => {
   
   useEffect(() => {
     window.addEventListener('scroll', setFixed);
-
-    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener('scroll', setFixed);
     };
   });
-
-
   return (
     <div className={fix ? 'headerBarContainer solid' : 'headerBarContainer'}>
       <header className='Header-of'>
         <img className="headerLogo" src={logo} alt="Company Logo" />
         <nav className={`navBarOfHome ${clicked ? 'active' : ''}`}>
           <ul className={click ? 'ulOfHome active':'ulOfHome'}>
-            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>INICIO</LinkScroll></li>
+            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={scrollToTop}>INICIO</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="news" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>NOTICIAS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="services" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>SERVICIOS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="location" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>UBICACIÓN</LinkScroll></li>

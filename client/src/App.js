@@ -1,8 +1,8 @@
-import { Route, Outlet, Routes,useNavigate, Navigate} from 'react-router-dom';
+import { Route, Routes,useNavigate, Navigate} from 'react-router-dom';
 import Home from './pages/home.jsx';
 import SignUp from './pages/signUp.jsx';
 import LogIn from './pages/login.jsx';
-import LogHomePage from './pages/logHomePage.jsx';
+import HomeLoged from './pages/homeLoged.jsx';
 import { useEffect, useState } from 'react';
 import NotFound from './components/notFound.jsx';
 import axios from 'axios';
@@ -27,23 +27,23 @@ export default function App() {
         });
     }, [navigate, auth]);
 
-    const PrivateRoute = () => {
-        return auth ? <Outlet /> : <Navigate to="/login" />;
-    }
-
     return (
         <Routes>
-          {/* Rutas públicas */}
-            <Route path="/" element={<Home />} />
-            <Route path="/logIn" element={<LogIn />} />
-            <Route path="/signUp" element={<SignUp />} />
-            <Route path="/home" element={<PrivateRoute/>}>
-                <Route path="/home" element={<LogHomePage/>}/>
-            </Route>
-            <Route path="*" element={<NotFound/>}/>
-      
-          {/* Rutas privadas */}
-          {/* Otras rutas privadas aquí */}
+            {auth ? (
+            <>
+                <Route path="/home" element={<HomeLoged />} />
+                <Route path="/logIn" element={<Navigate to="/home" />} />
+                <Route path="/signUp" element={<Navigate to="/home" />} />
+            </>
+            ):
+            <>
+                <Route path="/logIn" element={<LogIn />} />
+                <Route path="/home" element={<Navigate to="/logIn" />} />
+                <Route path="/signUp" element={<SignUp />} />
+                <Route path="/" element={<Home />} />
+            </>
+            }
+            <Route path="/*" element={<NotFound />} />
         </Routes>
-      );
+    );
 }

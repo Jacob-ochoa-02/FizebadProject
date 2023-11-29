@@ -1,4 +1,4 @@
-.Header-of {
+.HeaderLoged-of {
     display: flex;
     padding: 0px;
     justify-content: space-between;
@@ -7,7 +7,7 @@
     height: 90px;
 }
 
-.headerLogo {
+.headerLogedLogo {
     margin-top: 0px;
     margin-left: 90px;
     width: 180px;
@@ -21,7 +21,7 @@
     align-self: center;
 }
 
-nav {
+.navLoged {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@ nav {
     height: 100%;
 }
 
-nav>ul {
+.navLoged>ul {
     position: relative;
     display: flex;
     justify-content: center;
@@ -38,11 +38,11 @@ nav>ul {
     height: 100%;
 }
 
-.headerBarContainer {
+.headerLogedBarContainer {
     transition: 0.7s;
 }
 
-.headerBarContainer.solid {
+.headerLogedBarContainer {
     transition: 0.7s;
     animation-duration: 1s;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
@@ -52,8 +52,8 @@ nav>ul {
 }
 
 
-nav>ul li p,
-nav>ul li a {
+.navLoged>ul li p,
+.navLoged>ul li a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -66,14 +66,14 @@ nav>ul li a {
     font-size: 17px;
 }
 
-nav>ul li {
+.navLoged>ul li {
     height: 100%;
     display: flex;
     align-items: center;
     border-radius: 2px;
 }
 
-nav>ul li:hover {
+.navLoged>ul li:hover {
     transition: 0.6s;
     background-color: #111;
     cursor: pointer;
