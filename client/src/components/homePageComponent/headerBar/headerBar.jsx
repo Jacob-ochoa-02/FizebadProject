@@ -16,7 +16,7 @@ export default function HeaderBar() {
     window.scrollTo(0, 0);
   };
 
-const handleClick = () => {
+const handleClick = async () => {
   setClicked(!clicked);
   icons.forEach (icon => {  
     icon.classList.toggle("open");
