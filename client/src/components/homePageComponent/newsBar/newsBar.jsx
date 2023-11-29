@@ -13,12 +13,12 @@ export default function NewsBar() {
     useEffect(() => {
         const fetchingNews = async () => {
             axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=b9150a7bcc8248a085aee7e26374b28e')
-        .then(res => {
-          setNews(res.data.articles.slice(0, 6));
-        })
-        .catch(err => {
-          console.error(`Error on fetching news... ${err}`);
-        });
+                .then(res => {
+                    setNews(res.data.articles.slice(0, 6));
+                })
+                .catch(err => {
+                    console.error(`Error on fetching news...${err}`);
+                });
         };
         fetchingNews();
     }, []);
@@ -32,7 +32,7 @@ export default function NewsBar() {
         initialSlide: 1,
         beforeChange: (currentSlide, nextSlide) => {
             setActiveIndex(nextSlide);
-          },
+        },
     };
 
     return (
@@ -51,21 +51,21 @@ export default function NewsBar() {
                                         style={{
                                             opacity: Math.abs(index) === activeIndex ? 1 : 0.5,
                                             filter: Math.abs(index) === activeIndex ? 'brightness(100%) saturate(100%)' : 'brightness(70%) saturate(70%)',
-                                        }}/>
-                                    </div>
-                               <div className={Math.abs(index) === activeIndex ? '' : 'side-text'}>
+                                        }} />
+                                </div>
+                                <div className={Math.abs(index) === activeIndex ? '' : 'side-text'}>
                                     {Math.abs(index) === activeIndex ? (
-                                            <h3 className='titleNews'>{article.title}</h3>
+                                        <h3 className='titleNews'>{article.title}</h3>
                                     ) : null}
                                     {Math.abs(index) === activeIndex ? (
-                                            <a className='anchorW' href={article.url} target='blank'>Ver Más</a>
+                                        <a className='anchorW' href={article.url} target='blank'>Ver Más</a>
                                     ) : null}
                                 </div>
                             </div>
                         ))}
                     </Slider>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import logo from "../../../assets/images/logo.png";
 import user from "../../../assets/images/user.png";
 
@@ -6,30 +5,11 @@ import { Link } from "react-router-dom";
 import './headerLogedBar.css';
 
 export default function HeaderBarLoged() {
-    const [fix, setFix] = useState(false);
-
-    function setFixed() {
-        if (window.scrollY > 10) {
-            setFix(true);
-        } else {
-            setFix(false);
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', setFixed);
-
-        // Clean up the event listener when the component unmounts
-        return () => {
-            window.removeEventListener('scroll', setFixed);
-        };
-    });
-
     return (
-        <div className={fix ? 'headerBarContainer solid' : 'headerBarContainer'}>
-            <header className='Header-of'>
-                <img className="headerLogo" src={logo} alt="Company Logo" />
-                <nav>
+        <div className="headerLogedBarContainer">
+            <header className='HeaderLoged-of'>
+                <img className="headerLogedLogo" src={logo} alt="Company Logo" />
+                <nav className="navLoged">
                     <ul>
                         <li><p>INICIO</p></li>
                         <li><p>SERVICIOS</p></li>

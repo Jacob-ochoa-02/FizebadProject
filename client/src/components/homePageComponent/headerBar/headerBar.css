@@ -25,7 +25,7 @@
     height: 100%;
 }
 
-.navBarOfHome > .ulOfHome {
+.navBarOfHome>.ulOfHome {
     position: relative;
     display: flex;
     justify-content: center;
@@ -49,13 +49,14 @@
     opacity: 0.9;
 }
 
-.navBarOfHome > .ulOfHome .liOfHome {
+.navBarOfHome>.ulOfHome .liOfHome {
     display: flex;
     align-items: center;
     height: 100%;
     border-radius: 4px;
 }
-.navBarOfHome > .ulOfHome .liOfHome .paragOfHome{
+
+.navBarOfHome>.ulOfHome .liOfHome .paragOfHome {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -69,20 +70,20 @@
     font-size: 17px;
 }
 
-.navBarOfHome > .ulOfHome .liOfHome .active {
+.navBarOfHome>.ulOfHome .liOfHome .active {
     background-color: #111;
     border-radius: 4px;
     transition: 0ms;
 }
 
 
-.navBarOfHome > .ulOfHome .liOfHome:hover {
+.navBarOfHome>.ulOfHome .liOfHome:hover {
     transition: 0.6s;
     background-color: #111;
     cursor: pointer;
 }
 
-.logIn_btn{
+.logIn_btn {
     margin: 0px 25px;
     background-color: #AF4626;
     border-radius: 10px;
@@ -92,15 +93,15 @@
     transition: 0.2s;
 }
 
-.logIn_btn > a {
+.logIn_btn>a {
     padding: 20px;
-    color: white; 
+    color: white;
     font-size: 20px;
     text-decoration: none;
     width: 100%;
 }
 
-.logIn_btn:hover{
+.logIn_btn:hover {
     background-color: #b1573b;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }
@@ -130,7 +131,8 @@
         overflow: hidden;
         transition: opacity 0.5s ease-out, height 0.5s ease-out;
     }
-    .navBarOfHome.active{
+
+    .navBarOfHome.active {
         display: flex;
         position: absolute;
         background-color: #212121;
@@ -152,8 +154,9 @@
         justify-content: flex-end;
         width: 100%;
     }
+
     .liOfHome,
-    .paragOfHome{
+    .paragOfHome {
         width: 100%;
         justify-content: end;
     }
@@ -162,11 +165,12 @@
         margin-top: 10px;
         padding: 0px;
     }
-    .navBarOfHome > .ulOfHome .liOfHome .paragOfHome,
-    .logIn_btn > a {
+
+    .navBarOfHome>.ulOfHome .liOfHome .paragOfHome,
+    .logIn_btn>a {
         font-size: 14px;
     }
-    
+
     #menu {
         display: flex;
         flex-direction: column;
@@ -180,6 +184,7 @@
         cursor: pointer;
         margin-right: 40px;
     }
+
     #menuHamLogo {
         display: block;
         width: 50%;
@@ -190,6 +195,7 @@
 
 .burguerBtn {
     display: none;
+
     @media (max-width: 1367px) {
         display: flex;
         margin-right: 60px;

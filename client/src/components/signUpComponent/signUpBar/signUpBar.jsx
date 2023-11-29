@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Axios from 'axios';
+import axios from "axios";
 
 const emailRGX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}[@][a-zA-Z][a-zA-Z]{4,20}[.][a-z]{2,4}$/;
 const passRGX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@$#%&.]).{8,20}$/;
@@ -29,11 +30,11 @@ export default function SignUpBar() {
     const [passMatchFocus, setPassMatchFocus] = useState(false);
 
     const [errMsg, setErrorMsg] = useState('');
-const [successMsg, setSuccessMsg] = useState(false);
+    const [successMsg, setSuccessMsg] = useState(false);
 
     const [identificationReg, setIdentification] = useState('');
     const [validID, setValidID] = useState(false);
-const [IDFocus, setIDFocus] = useState(false);
+    const [IDFocus, setIDFocus] = useState(false);
 
     const [birthDateReg, setBirthDate] = useState('');
     const [namesReg, setName] = useState('');
@@ -67,8 +68,8 @@ const [IDFocus, setIDFocus] = useState(false);
         setErrorMsg('');
     }, [emailReg, matchEmail, passReg, matchPass, identificationReg])
 
-    const signUp = () => {
-        Axios.post('http://localhost:8000/signUp', {
+    const signUp = async () => {
+        await Axios.post('http://localhost:8000/signUp', {
             email: emailReg,
             password: passReg,
             DocumentCC: identificationReg,
@@ -85,8 +86,9 @@ const [IDFocus, setIDFocus] = useState(false);
 
     useEffect(() => {
         const fetchingData = async () => {
-            const response = await Axios.get('http://localhost:8000/levels');
+            const response = await axios.get('http://localhost:8000/levels');
             setSelectLevel(response.data);
+            console.log(response.data);
         }
         fetchingData();
     }, []);
@@ -145,7 +147,7 @@ const [IDFocus, setIDFocus] = useState(false);
                     <input
                         type="text"
                         id="forEmailInput"
-                        placeholder="Ingresa tu correo electrónico"
+                        placeholder="Ingresa tu Email"
                         // ref={userRef}
                         autoComplete="off"
                         className="signUpInputs emailInput"
@@ -203,7 +205,8 @@ const [IDFocus, setIDFocus] = useState(false);
                     </label>
                     <input type="password"
                         className="signUpInputs passInput"
-                        placeholder="Ingresa tu contraseña" id="forPassInput"
+                        placeholder="Ingresa tu contraseña"
+                        id="forPassInput"
                         onChange={(e) => {
                             setPass(e.target.value);
                         }}
