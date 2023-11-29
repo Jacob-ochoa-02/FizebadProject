@@ -12,13 +12,14 @@ export default function NewsBar() {
 
     useEffect(() => {
         const fetchingNews = async () => {
-            axios.get('https://newsapi.org/v2/everything?domains=wsj.com&apiKey=b9150a7bcc8248a085aee7e26374b28e')
-                .then(res => {
-                    setNews(res.data.articles.slice(0, 6));
-                })
-                .catch(err => {
-                    console.error(`Error on fetching news...${err}`);
-                });
+            axios.get('https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=b9150a7bcc8248a085aee7e26374b28e')
+        .then(res => {
+            const filteredNews = res.data.articles.filter(article => article.urlToimage !== null);
+          setNews(filteredNews.slice(0, 6));
+        })
+        .catch(err => {
+          console.error(`Error on fetching news... ${err}`);
+        });
         };
         fetchingNews();
     }, []);

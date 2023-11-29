@@ -127,7 +127,7 @@
         align-items: flex-end;
         justify-items: flex-end;
         opacity: 0;
-        max-height: 200px;
+        height: 0px;
         overflow: hidden;
         transition: opacity 0.5s ease-out, height 0.5s ease-out;
     }
@@ -145,7 +145,6 @@
         border-radius: 10px 0px 10px 10px;
         height: 200px;
         opacity: 1;
-        overflow: hidden;
         transition: opacity 0.5s ease-out, height 0.5s ease-out;
     }
 
@@ -213,4 +212,8 @@
 
 .ulOfMenu {
     list-style: none;
+}
+
+.burguerBtn {
+    cursor: pointer;
 }

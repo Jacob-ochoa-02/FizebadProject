@@ -1,6 +1,6 @@
 import './feeBar.css'
 
-export default function feeBar() {
+export default function FeeBar() {
     return (
         <div className="rates" id='rates'>
             <h1 className='titleOfFee'>NUESTRAS TARIFAS</h1>

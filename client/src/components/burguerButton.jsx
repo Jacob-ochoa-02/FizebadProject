@@ -4,7 +4,7 @@ import styled from "styled-components";
 function BurguerButton(props) {
     return (
         <Burguer>
-            <div onClick={props.closeMenu} className={`icon nav-icon-5 ${props.click ? 'open': ''}`}>
+            <div onClick={props.handleClick} className={`icon nav-icon-5 ${props.click ? 'open': ''}`}>
                 <span></span>
                 <span></span>
                 <span></span>

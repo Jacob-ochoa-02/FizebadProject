@@ -42,7 +42,7 @@ const verifyUser = (req, res, next) => {
 };
 
 app.get('/verifyUser', verifyUser, (req, res)=> {
-    return res ? res.json({Status: "Success", Email: req.email}): res.json({Status: "Error"});
+    return res.json({Status: "Success", Email: req.email});
 });
 
 app.get('/levels', (req,res)=> {

@@ -1,7 +1,7 @@
 import './serviceBar3.css';
 import { Link } from 'react-router-dom';
 
-export default function locationBar() {
+export default function ThirdServiceBar() {
     return (
         <div className='implementosContainer' id='implementos'>
             <div className='implementosImage'>

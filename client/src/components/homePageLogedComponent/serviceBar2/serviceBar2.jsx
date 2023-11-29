@@ -1,7 +1,7 @@
 import './serviceBar2.css';
 import { Link } from 'react-router-dom';
 
-export default function locationBar() {
+export default function SecondServiceBar() {
     return (
         <div className='clasesContainer' id='clases'>
             <div className='clasesImage'>
