@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import logo from "../../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { Link as LinkScroll} from "react-scroll";
+import { Link as LinkScroll } from "react-scroll";
 import BurguerButton from '../../burguerButton';
 import './headerBar.css';
 
@@ -34,7 +34,7 @@ export default function HeaderBar() {
       setFix(false);
     }
   }
-  
+
   useEffect(() => {
     window.addEventListener('scroll', setFixed);
     return () => {
@@ -56,11 +56,10 @@ export default function HeaderBar() {
             <Link to='/logIn' onClick={scrollToTop}>INICIAR SESIÓN</Link>
           </span>
         </nav>
-          <div className='burguerBtn'onClick={handleClick}>
-            <BurguerButton />
-          </div>
+        <div className='burguerBtn' onClick={handleClick}>
+          <BurguerButton />
+        </div>
       </header>
     </div >
   );
 }
-
