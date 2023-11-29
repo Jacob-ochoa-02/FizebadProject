@@ -26,7 +26,6 @@ export default function HeaderBar() {
       icon.classList.toggle("open");
     });
   };
-
   function setFixed() {
     if (window.scrollY > 10) {
       setFix(true);

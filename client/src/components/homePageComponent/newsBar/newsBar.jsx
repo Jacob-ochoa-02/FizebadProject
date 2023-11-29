@@ -33,7 +33,7 @@ export default function NewsBar() {
         initialSlide: 1,
         beforeChange: (currentSlide, nextSlide) => {
             setActiveIndex(nextSlide);
-          },
+        },
     };
 
     return (
@@ -52,21 +52,21 @@ export default function NewsBar() {
                                         style={{
                                             opacity: Math.abs(index) === activeIndex ? 1 : 0.5,
                                             filter: Math.abs(index) === activeIndex ? 'brightness(100%) saturate(100%)' : 'brightness(70%) saturate(70%)',
-                                        }}/>
-                                    </div>
-                               <div className={Math.abs(index) === activeIndex ? '' : 'side-text'}>
+                                        }} />
+                                </div>
+                                <div className={Math.abs(index) === activeIndex ? '' : 'side-text'}>
                                     {Math.abs(index) === activeIndex ? (
-                                            <h3 className='titleNews'>{article.title}</h3>
+                                        <h3 className='titleNews'>{article.title}</h3>
                                     ) : null}
                                     {Math.abs(index) === activeIndex ? (
-                                            <a className='anchorW' href={article.url} target='blank'>Ver Más</a>
+                                        <a className='anchorW' href={article.url} target='blank'>Ver Más</a>
                                     ) : null}
                                 </div>
                             </div>
                         ))}
                     </Slider>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }

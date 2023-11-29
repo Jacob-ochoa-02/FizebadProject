@@ -6,25 +6,26 @@ import HomeLoged from './pages/homeLoged.jsx';
 import { useEffect, useState } from 'react';
 import NotFound from './components/notFound.jsx';
 import axios from 'axios';
+import HomeLoged from './pages/homeLoged.jsx';
 
 export default function App() {
     const [auth, setAuth] = useState(false);
     const navigate = useNavigate();
 
-    useEffect(() => {
+    useEffect(async () => {
         axios.defaults.withCredentials = true;
-        axios.get('http://localhost:8000/verifyUser')
-        .then(res => {
-            if(res.data.Status === "Success") {
-                setAuth(true);
-            } else {
+        await axios.get('http://localhost:8000/verifyUser')
+            .then(res => {
+                if (res.data.Status === "Success") {
+                    setAuth(true);
+                } else {
+                    setAuth(false);
+                    console.log('something is wrong');
+                }
+            })
+            .catch(err => {
                 setAuth(false);
-                console.log('something is wrong');
-            }
-        })
-        .catch(err => {
-            setAuth(false);
-        });
+            });
     }, [navigate, auth]);
 
     return (
