@@ -1,0 +1,53 @@
+#notFoundBody {
+    background-image: url('../../assets/images/notFound.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#notFoundContainer {
+    padding: 40px;
+}
+.notFoundMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    margin-top: 70px;
+}
+
+#notFoundTitle {
+    margin-top: 136.5px;
+    color: white;
+    font-size: 100px;
+}
+
+#returnSpace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+    margin-bottom: 136.5px;
+}
+
+.returnBtnNF {
+    margin-top: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #AF4626;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 4ms ease-in-out;
+}
+
+.returnBtnNF:hover {
+    background-color: #ac4f33;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}

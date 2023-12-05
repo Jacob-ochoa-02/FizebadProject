@@ -132,7 +132,7 @@
         transition: opacity 0.5s ease-out, height 0.5s ease-out;
     }
 
-    .navBarOfHome.active {
+    .navBarOfHome.actived {
         display: flex;
         position: absolute;
         background-color: #212121;
@@ -148,7 +148,8 @@
         transition: opacity 0.5s ease-out, height 0.5s ease-out;
     }
 
-    .ulOfHome {
+    .ulOfHome,
+    .ulOfHome.active {
         flex-direction: column;
         justify-content: flex-end;
         width: 100%;

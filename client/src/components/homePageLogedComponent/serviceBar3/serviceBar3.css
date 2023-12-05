@@ -9,6 +9,14 @@
 
 #implementosTitle {
     text-align: center;
+    margin-bottom: 45px;
+    margin-top: 40px;
+    text-align: left;
+    color: #273C2C;
+}
+
+.infoReserv3{
+    margin-bottom: 45px;
 }
 
 .implementosImage {
@@ -22,11 +30,12 @@
 .implementosInfo {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 #implementosBox {
-    width: 400px;
-    height: 320px;
+    width: 342px;
+    height: 343px;
     border-radius: 30px;
     border-color: black;
     border: solid;
@@ -63,18 +72,20 @@
 
 #implementosBox {
     background-image: url('../../../assets/images/implementsImage.jpeg');
-    margin-left: 80px;
+    margin-left: 45px;
 }
 
 .implementosInfo {
     margin: 0 100px;
 }
 
-.reserveNow {
+.reserveNow3 {
+    display: flex;
+    align-items: center;
     background-color: #AF4626;
     border-radius: 20px;
-    border: none;
     width: 166px;
+    border: none;
     padding: 20px;
     font-size: 24px;
     transition: 0.7s;
@@ -85,7 +96,7 @@
     justify-content: center;
 }
 
-.reserveNow:hover {
+.reserveNow3:hover {
     background-color: #b1573b;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
     transition: 0.7s;

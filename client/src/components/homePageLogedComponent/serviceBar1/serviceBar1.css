@@ -9,6 +9,10 @@
 
 #canchasTitle {
     text-align: center;
+    margin-bottom: 45px;
+    margin-top: 40px;
+    text-align: left;
+    color: #273C2C;
 }
 
 .canchasImage {
@@ -22,6 +26,11 @@
 .canchasInfo {
     display: flex;
     flex-direction: column;
+    text-align: left;
+}
+
+.infoReserv1{
+    margin-bottom: 45px;
 }
 
 #canchasBox {
@@ -63,7 +72,7 @@
 
 #canchasBox {
     background-image: url('../../../assets/images/fieldsImage.jpg');
-    margin-left: 80px;
+    margin-left: 45px;
 }
 
 .canchasInfo {
@@ -71,6 +80,8 @@
 }
 
 .reserveNowCanch {
+    display: flex;
+    align-items: center;
     background-color: #AF4626;
     border-radius: 20px;
     border: none;

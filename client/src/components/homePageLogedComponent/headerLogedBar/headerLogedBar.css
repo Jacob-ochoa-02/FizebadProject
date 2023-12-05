@@ -29,7 +29,7 @@
     height: 100%;
 }
 
-.navLoged>ul {
+.navLoged>.ulLogged {
     position: relative;
     display: flex;
     justify-content: center;
@@ -66,15 +66,116 @@
     font-size: 17px;
 }
 
-.navLoged>ul li {
+.navLoged>.ulLogged.liLogged {
     height: 100%;
     display: flex;
     align-items: center;
     border-radius: 2px;
 }
 
-.navLoged>ul li:hover {
+.logOut_btn:hover {
+    background-color: #b1573b;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+.navLoged .liLogged:hover {
     transition: 0.6s;
     background-color: #111;
     cursor: pointer;
+}
+
+.headerLoged_btn {
+    cursor: pointer;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-right: 90px;
+}
+
+.navLoged>.ulLogged .liLogged .activeds {
+    background-color: #111;
+    border-radius: 4px;
+    transition: 0ms;
+}
+
+
+@media (max-width: 8000px) {
+    .navLoged {
+        display: flex;
+        position: absolute;
+        background-color: #212121;
+        padding: 2rem;
+        top: 78px;
+        right: 80px;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-items: flex-end;
+        border-radius: 10px 0px 10px 10px;
+        height: 0px;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-out, height 0.5s ease-out;
+    }
+    .navLoged.actives {
+        display: flex;
+        position: absolute;
+        background-color: #212121;
+        padding: 2rem;
+        top: 78px;
+        right: 80px;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-items: flex-end;
+        border-radius: 10px 0px 10px 10px;
+        height: 200px;
+        opacity: 1;
+        transition: opacity 0.5s ease-out, height 0.5s ease-out;
+    }
+
+    .ulLogged {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .liLogged {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .logOut_btn {
+        margin-top: 10px;
+        padding: 0px;
+    }
+
+    .logOut_btn>a {
+        font-size: 14px;
+    }
+}
+
+.logOut_btn {
+    margin: 0px 25px;
+    background-color: #AF4626;
+    border-radius: 10px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.logOut_btn>a {
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.logOut_btn:hover {
+    background-color: #b1573b;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 }

@@ -4,20 +4,23 @@ import SignUp from './pages/signUp.jsx';
 import LogIn from './pages/login.jsx';
 import HomeLoged from './pages/homeLoged.jsx';
 import { useEffect, useState } from 'react';
-import NotFound from './components/notFound.jsx';
+import NotFoundPage from './pages/notFoundPage.jsx';
 import axios from 'axios';
-import HomeLoged from './pages/homeLoged.jsx';
+import Reserve from './pages/reserve.jsx';
+import Bill from './pages/bill.jsx';
 
 export default function App() {
     const [auth, setAuth] = useState(false);
+    const [userEmail, setUserEmail] = useState('');
     const navigate = useNavigate();
 
-    useEffect(async () => {
+    useEffect( () => {
         axios.defaults.withCredentials = true;
-        await axios.get('http://localhost:8000/verifyUser')
+        axios.get('http://localhost:8000/verifyUser')
             .then(res => {
                 if (res.data.Status === "Success") {
                     setAuth(true);
+                    setUserEmail(res.data.Email);
                 } else {
                     setAuth(false);
                     console.log('something is wrong');
@@ -27,14 +30,18 @@ export default function App() {
                 setAuth(false);
             });
     }, [navigate, auth]);
+    
 
     return (
         <Routes>
             {auth ? (
             <>
                 <Route path="/home" element={<HomeLoged />} />
+                <Route path="/reserve" element={<Reserve userEmail={userEmail}/>} />
+                <Route path="/bill" element={<Bill userEmail={userEmail}/>} />
                 <Route path="/logIn" element={<Navigate to="/home" />} />
                 <Route path="/signUp" element={<Navigate to="/home" />} />
+                <Route path="/" element={<Navigate to="/home" />} />
             </>
             ):
             <>
@@ -42,9 +49,10 @@ export default function App() {
                 <Route path="/home" element={<Navigate to="/logIn" />} />
                 <Route path="/signUp" element={<SignUp />} />
                 <Route path="/" element={<Home />} />
+                <Route path="/*" element={<NotFoundPage />} />
             </>
             }
-            <Route path="/*" element={<NotFound />} />
+            <Route path="/*" element={<NotFoundPage />} />
         </Routes>
     );
 }

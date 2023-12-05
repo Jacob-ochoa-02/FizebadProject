@@ -16,15 +16,16 @@ export default function HeaderBar() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: smooth,
+      behavior: 'smooth',
+      duration: 500
     });
   };
 
-  const handleClick = async () => {
-    setClicked(!clicked);
+  const handleClick = () => {
     icons.forEach (icon => {  
       icon.classList.toggle("open");
     });
+    setClicked(!clicked);
   };
   function setFixed() {
     if (window.scrollY > 10) {
@@ -40,13 +41,14 @@ export default function HeaderBar() {
       window.removeEventListener('scroll', setFixed);
     };
   });
+  
   return (
     <div className={fix ? 'headerBarContainer solid' : 'headerBarContainer'}>
       <header className='Header-of'>
         <img className="headerLogo" src={logo} alt="Company Logo" />
-        <nav className={`navBarOfHome ${clicked ? 'active' : ''}`}>
+        <nav className={`navBarOfHome ${clicked ? 'actived' : ''}`}>
           <ul className={click ? 'ulOfHome active':'ulOfHome'}>
-            <li className='liOfHome'><LinkScroll className='paragOfHome' to="homePage" spy={true} smooth={true} offset={0} duration={500} onClick={scrollToTop}>INICIO</LinkScroll></li>
+            <li className='liOfHome'><Link className='paragOfHome' offset={0} duration={500} onClick={scrollToTop}>INICIO</Link></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="news" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>NOTICIAS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="services" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>SERVICIOS</LinkScroll></li>
             <li className='liOfHome'><LinkScroll className='paragOfHome' to="location" spy={true} smooth={true} offset={0} duration={500} onClick={closeMenu}>UBICACIÓN</LinkScroll></li>
