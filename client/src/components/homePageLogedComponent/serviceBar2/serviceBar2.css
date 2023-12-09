@@ -9,6 +9,14 @@
 
 #clasesTitle {
     text-align: center;
+    margin-bottom: 45px;
+    margin-top: 40px;
+    text-align: right;
+    color: #273C2C;
+}
+
+.infoReserv2{
+    margin-bottom: 45px;
 }
 
 .clasesImage {
@@ -22,6 +30,7 @@
 .clasesInfo {
     display: flex;
     flex-direction: column;
+    text-align: right;
 }
 
 #clasesBox {
@@ -63,14 +72,17 @@
 
 #clasesBox {
     background-image: url('../../../assets/images/classesImage.jpg');
-    margin-right: 80px;
+    margin-right: 45px;
 }
 
 .clasesInfo {
     margin: 0 100px;
 }
 
-.reserveNow {
+.reserveNowClass {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
     background-color: #AF4626;
     border-radius: 20px;
     border: none;
@@ -81,12 +93,11 @@
     margin-bottom: 70px;
     text-decoration: none;
     color: white;
-    align-items: center;
-    justify-content: center;
 }
 
-.reserveNow:hover {
+.reserveNowClass:hover {
     background-color: #b1573b;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
     transition: 0.7s;
+    text-align: right;
 }

@@ -16,7 +16,7 @@ export default function ServicesBar() {
                     <button className='servBtn' type="button">Implementos</button>
                 </section>
             </div>
-            <Link className='reserveNow' to='/signUp'>¡Reserva Ahora!</Link>
+            <Link className='reserveNow' to='/logIn'>¡Reserva Ahora!</Link>
         </div>
     )
 }

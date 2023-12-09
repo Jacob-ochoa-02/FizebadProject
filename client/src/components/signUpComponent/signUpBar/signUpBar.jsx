@@ -2,11 +2,10 @@ import "./signUpBar.css";
 import React, { useRef, useEffect, useState } from "react";
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Axios from 'axios';
 import axios from "axios";
 
-const emailRGX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}[@][a-zA-Z][a-zA-Z]{4,20}[.][a-z]{2,4}$/;
-const passRGX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@$#%&.]).{8,20}$/;
+const emailRGX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}@[a-zA-Z][a-zA-Z]{4,20}\.[a-z]{2,4}(\.[a-z]{2,3})?$/;
+const passRGX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@$#%&-_.]).{8,20}$/;
 const docRGX = /^(\d){8,15}$/;
 
 export default function SignUpBar() {
@@ -30,11 +29,9 @@ export default function SignUpBar() {
     const [passMatchFocus, setPassMatchFocus] = useState(false);
 
     const [errMsg, setErrorMsg] = useState('');
-    const [successMsg, setSuccessMsg] = useState(false);
 
     const [identificationReg, setIdentification] = useState('');
     const [validID, setValidID] = useState(false);
-    const [IDFocus, setIDFocus] = useState(false);
 
     const [birthDateReg, setBirthDate] = useState('');
     const [namesReg, setName] = useState('');
@@ -69,7 +66,7 @@ export default function SignUpBar() {
     }, [emailReg, matchEmail, passReg, matchPass, identificationReg])
 
     const signUp = async () => {
-        await Axios.post('http://localhost:8000/signUp', {
+        await axios.post('http://localhost:8000/signUp', {
             email: emailReg,
             password: passReg,
             DocumentCC: identificationReg,
@@ -88,7 +85,6 @@ export default function SignUpBar() {
         const fetchingData = async () => {
             const response = await axios.get('http://localhost:8000/levels');
             setSelectLevel(response.data);
-            console.log(response.data);
         }
         fetchingData();
     }, []);
@@ -192,7 +188,7 @@ export default function SignUpBar() {
                     />
                     <p id="confirmEmailNote" className={emailMatchFocus && !validEmailMatch ? "instructions1" : "offscreen"}>
                         <FontAwesomeIcon icon={faInfoCircle} />
-                        Must match the first email input field.
+                        Ambos emails deben ser iguales.
                     </p>
                     <label htmlFor="forPassInput" className="signUpFormLabels passLabel">
                         Contraseña:
@@ -252,7 +248,7 @@ export default function SignUpBar() {
                     />
                     <p id="confirmPassNote" className={passMatchFocus && !validMatchPass ? "instructions3" : "offscreen"}>
                         <FontAwesomeIcon icon={faInfoCircle} />
-                        Must match the first password input field.
+                        Ambas contraseñas deben ser iguales.
                     </p>
                     <label htmlFor="lvlInpt" className="signUpFormLabels lvlLabel">Nivel:</label>
                     <select name="selection" className='lvlSelectInput lvlInput' value={levelReg} onChange={(e) => {

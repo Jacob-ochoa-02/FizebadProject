@@ -1,0 +1,24 @@
+.header-ofNotFound {
+    display: flex;
+    padding: 0px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    position: absolute;
+    transition: 0.4s;
+    width: 100%;
+    height: 90px;
+    z-index: 9999;
+}
+
+.headerLogoNotFound {
+    margin-top: 0px;
+    margin-left: 90px;
+    width: 180px;
+    align-self: center;
+}
+
+.headerBarContainerNotFound {
+    transition: 0.7s;
+    background-color: transparent;
+}

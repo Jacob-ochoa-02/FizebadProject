@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors({
     origin: 'http://localhost:3000',
-    methods: ["POST", "GET"],
+    methods: ["POST", "GET", "PUT"],
     credentials: true
 }));
 app.use(express.json());
@@ -24,6 +24,7 @@ const db = mysql.createConnection({
     password: 'isaac8alope',
     insecureAuth: true
 });
+
 
 const verifyUser = (req, res, next) => {
     const token = req.cookies.token;
@@ -70,7 +71,7 @@ app.post('/signUp', async (req, res) => {
     });
 });
 
-app.post('/logIn', async (req, res)=>{
+app.post('/logIn', (req, res)=>{
     const emails = req.body.email;
     db.query("SELECT * from users where Email = ?",[emails], (err, data) => {
         if(data.length > 0) {
@@ -89,14 +90,56 @@ app.post('/logIn', async (req, res)=>{
     });
 });
 
-app.get('/reserving', async (req, res) => {
-    const emails = req.body.email;
-    db.query("SELECT * from reserve LEFT JOIN users ON Email_FK = ?", [emails], (err, data) => {
+app.get('/tutors', (req, res) => {
+    db.query("SELECT * FROM users u RIGHT JOIN user_type ut ON User_Type_FK = ID_User_Type where ut.puesto = ('Monitor' OR 'Cadi' OR 'Profesor') AND u.name IS NOT NULL", (err, data)=> {
+        return err ? res.json(err): res.json(data);
+    });
+});
+
+app.post('/user', (req, res) =>{
+    const email = req.body.email;
+    db.query("SELECT * FROM users WHERE Email = ?", [email], (err, data) => {
         if(data.length > 0) {
-            
-        }else {
-            return res.json({Error: "Error on fetching data from database..."});
+            return err ? res.json(err): res.json(data);
         }
+    })
+})
+
+app.get('/implements', (req, res) => {
+    db.query("SELECT * FROM implements", (err, data) => {
+        return err ? res.json(err): res.json(data);
+    });
+});
+
+app.get('/fields', (req, res) => {
+    db.query("SELECT * FROM fields", (err, data) => {
+        return err ? res.json(err): res.json(data);
+    });
+});
+
+
+app.get('/reserves', (req, res) => {
+    db.query("SELECT * FROM reserve", (err, data) => {
+        return err ? res.json(err): res.json(data);
+    })
+})
+
+app.post('/reservesTo', (req, res) => {
+    const email = req.body.email;
+    db.query("SELECT * FROM reserve where Email_FK = ?", [email], (err, data) => {
+        return err ? res.json(err): res.json(data);
+    })
+})
+
+app.post('/reserving', verifyUser,(req, res) => {
+    const schedule = req.body.schedule;
+    const field = req.body.field;
+    const email = req.body.email;
+    const pricing = req.body.pricing;
+    const turnFee = req.body.turnFee;
+    const tutor = req.body.tutor;
+    db.query("INSERT INTO reserve (ReservationHour, Field_FK, Email_FK, Implements_FK, TurnFee, tutor) VALUES (?, ?, ?, ?, ?, ?)", [schedule, field, email, pricing, turnFee, tutor], (err, data) => {
+        return err ? res.json(err): res.json(data);
     })
 })
 
